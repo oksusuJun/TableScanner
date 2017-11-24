@@ -60,7 +60,7 @@
 		<filter-name>springMultipartFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
-	
+	 
 	<!-- 
 		Spring Security 에서 인증/권한 처리를 위한 Filter 추가. 
 		filter-name은 반드시 springSecurityFilterChain 로 지정. 
@@ -74,5 +74,4 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
-</web-app>
 </web-app>
