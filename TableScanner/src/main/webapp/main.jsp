@@ -6,6 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>TableScanner main page</h1>
 
 </body>
 </html>
