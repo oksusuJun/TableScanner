@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	beans:beans xmlns="~" : ~ 내용의 스키마를 기본으로 쓰겠다
+	-> 보통 Spring 설정파일을생성하면 beans로 되어있기 때문에 beans:bean 을 그냥 bean 으로 써왔던 것!!
+	=> 여기선 security 관련 설정이 주로 이루어지기 때문에 기본을 security 로 설정.
+	따라서, bean 태그를 beans:bean 으로 사용해야하고, security 관련설정은 그냥 쓰면 됨~~
+ -->
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- Spring Security 관련 설정 파일 -->
+
+	<context:component-scan base-package="com.mydomain.security"/>
+	<!--
+		Password 암호화 처리 bean 
+		입력받은 password를 자동으로 암호화시켜서 저장한다.
+		단, 복원은 안됨!! 
+		-> 비밀번호 찾기? 비밀번호를 새로만들어알려줘서 사용자가 비밀번호를 변경하도록한다.
+			(임시비밀번호~~~~아하~~~~)
+	-->
+	<beans:bean name="passwordEncoder" 
+					class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+	<http>
+	<!-- 사용자 요청이 들어왔을때 인증,권한처리를 해주는 내용 -->
+	
+	<!--Spring Security 설정 : 설정 선언 순서대로 처리하기때문에, 
+		/** 를 가장 먼저 선언하게되면 나머지 것들은 아무 의미가 없다.
+		+ 속성
+			- pattern : 접근 경로 설정
+			- access : 권한 설정	
+	-->
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+		<intercept-url pattern="/member/**" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
+		<intercept-url pattern="/**" access="permitAll"/>
+		
+</beans:beans>
+
+
+
+
+
+
+
