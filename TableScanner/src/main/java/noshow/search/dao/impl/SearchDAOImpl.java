@@ -1,4 +1,4 @@
-package noshow.search.dao;
+package noshow.search.dao.impl;
 
 public class SearchDAOImpl {
 	

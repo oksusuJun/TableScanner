@@ -1,4 +1,4 @@
-package noshow.board.service;
+package noshow.board.service.impl;
 
 public class BoardServiceImpl {
 	

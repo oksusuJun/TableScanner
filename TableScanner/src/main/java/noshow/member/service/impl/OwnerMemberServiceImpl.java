@@ -1,4 +1,4 @@
-package noshow.member.service;
+package noshow.member.service.impl;
 
 public class OwnerMemberServiceImpl {
 	

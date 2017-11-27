@@ -1,5 +1,5 @@
-package noshow.board.dao;
+package noshow.board.dao.impl;
 
 public class BoardDAOImpl {
-	
+
 }

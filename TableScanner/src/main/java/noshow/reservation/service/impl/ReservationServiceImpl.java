@@ -1,4 +1,4 @@
-package noshow.reservation.service;
+package noshow.reservation.service.impl;
 
 public class ReservationServiceImpl {
 	
