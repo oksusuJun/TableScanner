@@ -15,16 +15,14 @@ public class Restaurant implements Serializable{
 	private String rtImg; /* 음식점 사진 이름*/
 	private String rtSaveImg; /* 저장 이름 */
 	private String rtAddress; /* 음식점 위치*/
-	private int rtLatitude; /* 위도 */
-	private int rtLongitude; /* 경도 */
 	private int rtCapacity; /* 수용가능인원 */
 	private int rtDeposit; /* 1인 금액 */
 	
 	public Restaurant() {}
 
 	public Restaurant(Member businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
-			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtLatitude,
-			int rtLongitude, int rtCapacity, int rtDeposit) {
+			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
+			int rtDeposit) {
 		this.businessId = businessId;
 		this.rtNum = rtNum;
 		this.rtName = rtName;
@@ -36,8 +34,6 @@ public class Restaurant implements Serializable{
 		this.rtImg = rtImg;
 		this.rtSaveImg = rtSaveImg;
 		this.rtAddress = rtAddress;
-		this.rtLatitude = rtLatitude;
-		this.rtLongitude = rtLongitude;
 		this.rtCapacity = rtCapacity;
 		this.rtDeposit = rtDeposit;
 	}
@@ -130,22 +126,6 @@ public class Restaurant implements Serializable{
 		this.rtAddress = rtAddress;
 	}
 
-	public int getRtLatitude() {
-		return rtLatitude;
-	}
-
-	public void setRtLatitude(int rtLatitude) {
-		this.rtLatitude = rtLatitude;
-	}
-
-	public int getRtLongitude() {
-		return rtLongitude;
-	}
-
-	public void setRtLongitude(int rtLongitude) {
-		this.rtLongitude = rtLongitude;
-	}
-
 	public int getRtCapacity() {
 		return rtCapacity;
 	}
@@ -166,9 +146,8 @@ public class Restaurant implements Serializable{
 	public String toString() {
 		return "Restaurant [businessId=" + businessId + ", rtNum=" + rtNum + ", rtName=" + rtName + ", rtTel=" + rtTel
 				+ ", rtField=" + rtField + ", rtHoliday=" + rtHoliday + ", rtOpen=" + rtOpen + ", rtClose=" + rtClose
-				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtLatitude="
-				+ rtLatitude + ", rtLongitude=" + rtLongitude + ", rtCapacity=" + rtCapacity + ", rtDeposit="
-				+ rtDeposit + "]";
+				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtCapacity="
+				+ rtCapacity + ", rtDeposit=" + rtDeposit + "]";
 	}
 
 	@Override
@@ -183,8 +162,6 @@ public class Restaurant implements Serializable{
 		result = prime * result + ((rtField == null) ? 0 : rtField.hashCode());
 		result = prime * result + ((rtHoliday == null) ? 0 : rtHoliday.hashCode());
 		result = prime * result + ((rtImg == null) ? 0 : rtImg.hashCode());
-		result = prime * result + rtLatitude;
-		result = prime * result + rtLongitude;
 		result = prime * result + ((rtName == null) ? 0 : rtName.hashCode());
 		result = prime * result + rtNum;
 		result = prime * result + ((rtOpen == null) ? 0 : rtOpen.hashCode());
@@ -236,10 +213,6 @@ public class Restaurant implements Serializable{
 				return false;
 		} else if (!rtImg.equals(other.rtImg))
 			return false;
-		if (rtLatitude != other.rtLatitude)
-			return false;
-		if (rtLongitude != other.rtLongitude)
-			return false;
 		if (rtName == null) {
 			if (other.rtName != null)
 				return false;
@@ -264,6 +237,7 @@ public class Restaurant implements Serializable{
 			return false;
 		return true;
 	}
+
 	
 	
 	

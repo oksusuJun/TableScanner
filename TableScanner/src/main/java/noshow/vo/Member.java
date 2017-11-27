@@ -1,6 +1,7 @@
 package noshow.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Member implements Serializable{
 	private String memberId;	/* 회원아이디 */
@@ -8,14 +9,14 @@ public class Member implements Serializable{
 	private String memberName;	/* 이름 */
 	private String memberGender; /* 성별 */
 	private String memberTel; /* 전화번호 */
-	private String memberBirthday; /* 생년월일 */
+	private Date memberBirthday; /* 생년월일 */
 	private String memberEmail; /* 이메일 */
 	
 	// 생성자
 	public Member() {}
-	
-	public Member(String memberId, String memberPassword, String memberName, int memberAge, String memberGender,
-			String memberTel, String memberBirthday, String memberEmail) {
+
+	public Member(String memberId, String memberPassword, String memberName, String memberGender, String memberTel,
+			Date memberBirthday, String memberEmail) {
 		this.memberId = memberId;
 		this.memberPassword = memberPassword;
 		this.memberName = memberName;
@@ -65,11 +66,11 @@ public class Member implements Serializable{
 		this.memberTel = memberTel;
 	}
 
-	public String getMemberBirthday() {
+	public Date getMemberBirthday() {
 		return memberBirthday;
 	}
 
-	public void setMemberBirthday(String memberBirthday) {
+	public void setMemberBirthday(Date memberBirthday) {
 		this.memberBirthday = memberBirthday;
 	}
 
@@ -148,7 +149,7 @@ public class Member implements Serializable{
 			return false;
 		return true;
 	}
-
+	
 
 	
 }
