@@ -5,25 +5,24 @@ import java.util.Date;
 
 public class Review implements Serializable {
 	private int reviewNum; /* 후기글번호 */
-	private String reviewContent; /* 내용 */
-	private Date reviewWriteTime; /* 작성시간 */
-	private String reviewImage; /* 리뷰사진 */
+	private String reviewText; /* 내용 */
+	private Date reviewTime; /* 작성시간 */
+	private String reviewImg; /* 리뷰사진 */
 	private Member memberId; /* 회원아이디 */
 	private Restaurant businessId; /* 점주회원 아이디 */
-	private Reservation reservationNum; /* 예약리스트번호 */
+	private Reservation resNum; /* 예약리스트번호 */
 
-	public Review() {
-	}
+	public Review() {}
 
-	public Review(int reviewNum, String reviewContent, Date reviewWriteTime, String reviewImage, Member memberId,
-			Restaurant businessId, Reservation reservationNum) {
+	public Review(int reviewNum, String reviewText, Date reviewTime, String reviewImg, Member memberId,
+			Restaurant businessId, Reservation resNum) {
 		this.reviewNum = reviewNum;
-		this.reviewContent = reviewContent;
-		this.reviewWriteTime = reviewWriteTime;
-		this.reviewImage = reviewImage;
+		this.reviewText = reviewText;
+		this.reviewTime = reviewTime;
+		this.reviewImg = reviewImg;
 		this.memberId = memberId;
 		this.businessId = businessId;
-		this.reservationNum = reservationNum;
+		this.resNum = resNum;
 	}
 
 	public int getReviewNum() {
@@ -34,28 +33,28 @@ public class Review implements Serializable {
 		this.reviewNum = reviewNum;
 	}
 
-	public String getReviewContent() {
-		return reviewContent;
+	public String getReviewText() {
+		return reviewText;
 	}
 
-	public void setReviewContent(String reviewContent) {
-		this.reviewContent = reviewContent;
+	public void setReviewText(String reviewText) {
+		this.reviewText = reviewText;
 	}
 
-	public Date getReviewWriteTime() {
-		return reviewWriteTime;
+	public Date getReviewTime() {
+		return reviewTime;
 	}
 
-	public void setReviewWriteTime(Date reviewWriteTime) {
-		this.reviewWriteTime = reviewWriteTime;
+	public void setReviewTime(Date reviewTime) {
+		this.reviewTime = reviewTime;
 	}
 
-	public String getReviewImage() {
-		return reviewImage;
+	public String getReviewImg() {
+		return reviewImg;
 	}
 
-	public void setReviewImage(String reviewImage) {
-		this.reviewImage = reviewImage;
+	public void setReviewImg(String reviewImg) {
+		this.reviewImg = reviewImg;
 	}
 
 	public Member getMemberId() {
@@ -74,19 +73,19 @@ public class Review implements Serializable {
 		this.businessId = businessId;
 	}
 
-	public Reservation getReservationNum() {
-		return reservationNum;
+	public Reservation getResNum() {
+		return resNum;
 	}
 
-	public void setReservationNum(Reservation reservationNum) {
-		this.reservationNum = reservationNum;
+	public void setResNum(Reservation resNum) {
+		this.resNum = resNum;
 	}
 
 	@Override
 	public String toString() {
-		return "Review [reviewNum=" + reviewNum + ", reviewContent=" + reviewContent + ", reviewWriteTime="
-				+ reviewWriteTime + ", reviewImage=" + reviewImage + ", memberId=" + memberId + ", businessId="
-				+ businessId + ", reservationNum=" + reservationNum + "]";
+		return "Review [reviewNum=" + reviewNum + ", reviewText=" + reviewText + ", reviewTime=" + reviewTime
+				+ ", reviewImg=" + reviewImg + ", memberId=" + memberId + ", businessId=" + businessId + ", resNum="
+				+ resNum + "]";
 	}
 
 	@Override
@@ -95,11 +94,11 @@ public class Review implements Serializable {
 		int result = 1;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
-		result = prime * result + ((reservationNum == null) ? 0 : reservationNum.hashCode());
-		result = prime * result + ((reviewContent == null) ? 0 : reviewContent.hashCode());
-		result = prime * result + ((reviewImage == null) ? 0 : reviewImage.hashCode());
+		result = prime * result + ((resNum == null) ? 0 : resNum.hashCode());
+		result = prime * result + ((reviewImg == null) ? 0 : reviewImg.hashCode());
 		result = prime * result + reviewNum;
-		result = prime * result + ((reviewWriteTime == null) ? 0 : reviewWriteTime.hashCode());
+		result = prime * result + ((reviewText == null) ? 0 : reviewText.hashCode());
+		result = prime * result + ((reviewTime == null) ? 0 : reviewTime.hashCode());
 		return result;
 	}
 
@@ -122,29 +121,30 @@ public class Review implements Serializable {
 				return false;
 		} else if (!memberId.equals(other.memberId))
 			return false;
-		if (reservationNum == null) {
-			if (other.reservationNum != null)
+		if (resNum == null) {
+			if (other.resNum != null)
 				return false;
-		} else if (!reservationNum.equals(other.reservationNum))
+		} else if (!resNum.equals(other.resNum))
 			return false;
-		if (reviewContent == null) {
-			if (other.reviewContent != null)
+		if (reviewImg == null) {
+			if (other.reviewImg != null)
 				return false;
-		} else if (!reviewContent.equals(other.reviewContent))
-			return false;
-		if (reviewImage == null) {
-			if (other.reviewImage != null)
-				return false;
-		} else if (!reviewImage.equals(other.reviewImage))
+		} else if (!reviewImg.equals(other.reviewImg))
 			return false;
 		if (reviewNum != other.reviewNum)
 			return false;
-		if (reviewWriteTime == null) {
-			if (other.reviewWriteTime != null)
+		if (reviewText == null) {
+			if (other.reviewText != null)
 				return false;
-		} else if (!reviewWriteTime.equals(other.reviewWriteTime))
+		} else if (!reviewText.equals(other.reviewText))
+			return false;
+		if (reviewTime == null) {
+			if (other.reviewTime != null)
+				return false;
+		} else if (!reviewTime.equals(other.reviewTime))
 			return false;
 		return true;
 	}
 
+	
 }

@@ -4,87 +4,86 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Reservation implements Serializable {
-	private int reservationNum; /* 예약리스트번호 */
-	private Date reservationDate; /* 예약날짜 */
-	private int numberOfPeople; /* 인원 */
-	private Date reservationWantedTime; /* 예약원하는시간 */
-	private Date reservationPaidTime; /* 예약결제완료한시간 */
-	private String reservationPayStatement; /* 결제유무 */
-	private int reservationPrice; /* 예약금액 */
+	private int resNum; /* 예약리스트번호 */
+	private Date resDate; /* 예약날짜 */
+	private int resPeople; /* 인원 */
+	private Date resTime; /* 예약원하는시간 */
+	private Date resPaidTime; /* 예약결제완료한시간 */
+	private String resPayStatement; /* 결제유무 */
+	private int resPrice; /* 예약금액 */
 	private Member memberId; /* 회원아이디 */
 	private Restaurant businessId; /* 점주회원 아이디 */
 
 	public Reservation() {
 	}
 
-	public Reservation(int reservationNum, Date reservationDate, int numberOfPeople, Date reservationWantedTime,
-			Date reservationPaidTime, String reservationPayStatement, int reservationPrice, Member memberId,
-			Restaurant businessId) {
-		this.reservationNum = reservationNum;
-		this.reservationDate = reservationDate;
-		this.numberOfPeople = numberOfPeople;
-		this.reservationWantedTime = reservationWantedTime;
-		this.reservationPaidTime = reservationPaidTime;
-		this.reservationPayStatement = reservationPayStatement;
-		this.reservationPrice = reservationPrice;
+	public Reservation(int resNum, Date resDate, int resPeople, Date resTime, Date resPaidTime, String resPayStatement,
+			int resPrice, Member memberId, Restaurant businessId) {
+		this.resNum = resNum;
+		this.resDate = resDate;
+		this.resPeople = resPeople;
+		this.resTime = resTime;
+		this.resPaidTime = resPaidTime;
+		this.resPayStatement = resPayStatement;
+		this.resPrice = resPrice;
 		this.memberId = memberId;
 		this.businessId = businessId;
 	}
 
-	public int getReservationNum() {
-		return reservationNum;
+	public int getResNum() {
+		return resNum;
 	}
 
-	public void setReservationNum(int reservationNum) {
-		this.reservationNum = reservationNum;
+	public void setResNum(int resNum) {
+		this.resNum = resNum;
 	}
 
-	public Date getReservationDate() {
-		return reservationDate;
+	public Date getResDate() {
+		return resDate;
 	}
 
-	public void setReservationDate(Date reservationDate) {
-		this.reservationDate = reservationDate;
+	public void setResDate(Date resDate) {
+		this.resDate = resDate;
 	}
 
-	public int getNumberOfPeople() {
-		return numberOfPeople;
+	public int getResPeople() {
+		return resPeople;
 	}
 
-	public void setNumberOfPeople(int numberOfPeople) {
-		this.numberOfPeople = numberOfPeople;
+	public void setResPeople(int resPeople) {
+		this.resPeople = resPeople;
 	}
 
-	public Date getReservationWantedTime() {
-		return reservationWantedTime;
+	public Date getResTime() {
+		return resTime;
 	}
 
-	public void setReservationWantedTime(Date reservationWantedTime) {
-		this.reservationWantedTime = reservationWantedTime;
+	public void setResTime(Date resTime) {
+		this.resTime = resTime;
 	}
 
-	public Date getReservationPaidTime() {
-		return reservationPaidTime;
+	public Date getResPaidTime() {
+		return resPaidTime;
 	}
 
-	public void setReservationPaidTime(Date reservationPaidTime) {
-		this.reservationPaidTime = reservationPaidTime;
+	public void setResPaidTime(Date resPaidTime) {
+		this.resPaidTime = resPaidTime;
 	}
 
-	public String getReservationPayStatement() {
-		return reservationPayStatement;
+	public String getResPayStatement() {
+		return resPayStatement;
 	}
 
-	public void setReservationPayStatement(String reservationPayStatement) {
-		this.reservationPayStatement = reservationPayStatement;
+	public void setResPayStatement(String resPayStatement) {
+		this.resPayStatement = resPayStatement;
 	}
 
-	public int getReservationPrice() {
-		return reservationPrice;
+	public int getResPrice() {
+		return resPrice;
 	}
 
-	public void setReservationPrice(int reservationPrice) {
-		this.reservationPrice = reservationPrice;
+	public void setResPrice(int resPrice) {
+		this.resPrice = resPrice;
 	}
 
 	public Member getMemberId() {
@@ -105,11 +104,9 @@ public class Reservation implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Reservation [reservationNum=" + reservationNum + ", reservationDate=" + reservationDate
-				+ ", numberOfPeople=" + numberOfPeople + ", reservationWantedTime=" + reservationWantedTime
-				+ ", reservationPaidTime=" + reservationPaidTime + ", reservationPayStatement="
-				+ reservationPayStatement + ", reservationPrice=" + reservationPrice + ", memberId=" + memberId
-				+ ", businessId=" + businessId + "]";
+		return "Reservation [resNum=" + resNum + ", resDate=" + resDate + ", resPeople=" + resPeople + ", resTime="
+				+ resTime + ", resPaidTime=" + resPaidTime + ", resPayStatement=" + resPayStatement + ", resPrice="
+				+ resPrice + ", memberId=" + memberId + ", businessId=" + businessId + "]";
 	}
 
 	@Override
@@ -118,13 +115,13 @@ public class Reservation implements Serializable {
 		int result = 1;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
-		result = prime * result + numberOfPeople;
-		result = prime * result + ((reservationDate == null) ? 0 : reservationDate.hashCode());
-		result = prime * result + reservationNum;
-		result = prime * result + ((reservationPaidTime == null) ? 0 : reservationPaidTime.hashCode());
-		result = prime * result + ((reservationPayStatement == null) ? 0 : reservationPayStatement.hashCode());
-		result = prime * result + reservationPrice;
-		result = prime * result + ((reservationWantedTime == null) ? 0 : reservationWantedTime.hashCode());
+		result = prime * result + ((resDate == null) ? 0 : resDate.hashCode());
+		result = prime * result + resNum;
+		result = prime * result + ((resPaidTime == null) ? 0 : resPaidTime.hashCode());
+		result = prime * result + ((resPayStatement == null) ? 0 : resPayStatement.hashCode());
+		result = prime * result + resPeople;
+		result = prime * result + resPrice;
+		result = prime * result + ((resTime == null) ? 0 : resTime.hashCode());
 		return result;
 	}
 
@@ -147,33 +144,35 @@ public class Reservation implements Serializable {
 				return false;
 		} else if (!memberId.equals(other.memberId))
 			return false;
-		if (numberOfPeople != other.numberOfPeople)
-			return false;
-		if (reservationDate == null) {
-			if (other.reservationDate != null)
+		if (resDate == null) {
+			if (other.resDate != null)
 				return false;
-		} else if (!reservationDate.equals(other.reservationDate))
+		} else if (!resDate.equals(other.resDate))
 			return false;
-		if (reservationNum != other.reservationNum)
+		if (resNum != other.resNum)
 			return false;
-		if (reservationPaidTime == null) {
-			if (other.reservationPaidTime != null)
+		if (resPaidTime == null) {
+			if (other.resPaidTime != null)
 				return false;
-		} else if (!reservationPaidTime.equals(other.reservationPaidTime))
+		} else if (!resPaidTime.equals(other.resPaidTime))
 			return false;
-		if (reservationPayStatement == null) {
-			if (other.reservationPayStatement != null)
+		if (resPayStatement == null) {
+			if (other.resPayStatement != null)
 				return false;
-		} else if (!reservationPayStatement.equals(other.reservationPayStatement))
+		} else if (!resPayStatement.equals(other.resPayStatement))
 			return false;
-		if (reservationPrice != other.reservationPrice)
+		if (resPeople != other.resPeople)
 			return false;
-		if (reservationWantedTime == null) {
-			if (other.reservationWantedTime != null)
+		if (resPrice != other.resPrice)
+			return false;
+		if (resTime == null) {
+			if (other.resTime != null)
 				return false;
-		} else if (!reservationWantedTime.equals(other.reservationWantedTime))
+		} else if (!resTime.equals(other.resTime))
 			return false;
 		return true;
 	}
+
+	
 
 }

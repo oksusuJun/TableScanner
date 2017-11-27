@@ -5,42 +5,41 @@ import java.util.Date;
 
 public class Restaurant implements Serializable{
 	private Member businessId; /* 점주 회원 아이디 */
-	private int businessNum; /* 사업자 번호 */
-	private String restaurantName; /* 음식점 명 */
-	private String restaurantTel; /* 음식점 전화번호 */
-	private String restaurantField; /* 업종 */
-	private String restaurantHoliday; /* 휴무일 */
-	private Date restaurantOpen; /* 오픈시간 */
-	private Date restaurantClose; /* close 시간 */
-	private String restaurantImg; /* 음식점 사진 이름*/
-	private String restaurantSaveImg; /* 저장 이름 */
-	private String restaurantLocation; /* 음식점 위치*/
-	private int restaurantLocationLatitude; /* 위도 */
-	private int restaurantLocationLongitude; /* 경도 */
-	private int restaurantCapacity; /* 수용가능인원 */
-	private int restaurantDeposit; /* 1인 금액 */
+	private int rtNum; /* 사업자 번호 */
+	private String rtName; /* 음식점 명 */
+	private String rtTel; /* 음식점 전화번호 */
+	private String rtField; /* 업종 */
+	private String rtHoliday; /* 휴무일 */
+	private Date rtOpen; /* 오픈시간 */
+	private Date rtClose; /* close 시간 */
+	private String rtImg; /* 음식점 사진 이름*/
+	private String rtSaveImg; /* 저장 이름 */
+	private String rtAddress; /* 음식점 위치*/
+	private int rtLatitude; /* 위도 */
+	private int rtLongitude; /* 경도 */
+	private int rtCapacity; /* 수용가능인원 */
+	private int rtDeposit; /* 1인 금액 */
 	
 	public Restaurant() {}
-	
-	public Restaurant(Member businessId, int businessNum, String restaurantName, String restaurantTel,
-			String restaurantField, String restaurantHoliday, Date restaurantOpen, Date restaurantClose,
-			String restaurantImg, String restaurantSaveImg, String restaurantLocation, int restaurantLocationLatitude,
-			int restaurantLocationLongitude, int restaurantCapacity, int restaurantDeposit) {
+
+	public Restaurant(Member businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
+			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtLatitude,
+			int rtLongitude, int rtCapacity, int rtDeposit) {
 		this.businessId = businessId;
-		this.businessNum = businessNum;
-		this.restaurantName = restaurantName;
-		this.restaurantTel = restaurantTel;
-		this.restaurantField = restaurantField;
-		this.restaurantHoliday = restaurantHoliday;
-		this.restaurantOpen = restaurantOpen;
-		this.restaurantClose = restaurantClose;
-		this.restaurantImg = restaurantImg;
-		this.restaurantSaveImg = restaurantSaveImg;
-		this.restaurantLocation = restaurantLocation;
-		this.restaurantLocationLatitude = restaurantLocationLatitude;
-		this.restaurantLocationLongitude = restaurantLocationLongitude;
-		this.restaurantCapacity = restaurantCapacity;
-		this.restaurantDeposit = restaurantDeposit;
+		this.rtNum = rtNum;
+		this.rtName = rtName;
+		this.rtTel = rtTel;
+		this.rtField = rtField;
+		this.rtHoliday = rtHoliday;
+		this.rtOpen = rtOpen;
+		this.rtClose = rtClose;
+		this.rtImg = rtImg;
+		this.rtSaveImg = rtSaveImg;
+		this.rtAddress = rtAddress;
+		this.rtLatitude = rtLatitude;
+		this.rtLongitude = rtLongitude;
+		this.rtCapacity = rtCapacity;
+		this.rtDeposit = rtDeposit;
 	}
 
 	public Member getBusinessId() {
@@ -51,127 +50,125 @@ public class Restaurant implements Serializable{
 		this.businessId = businessId;
 	}
 
-	public int getBusinessNum() {
-		return businessNum;
+	public int getRtNum() {
+		return rtNum;
 	}
 
-	public void setBusinessNum(int businessNum) {
-		this.businessNum = businessNum;
+	public void setRtNum(int rtNum) {
+		this.rtNum = rtNum;
 	}
 
-	public String getRestaurantName() {
-		return restaurantName;
+	public String getRtName() {
+		return rtName;
 	}
 
-	public void setRestaurantName(String restaurantName) {
-		this.restaurantName = restaurantName;
+	public void setRtName(String rtName) {
+		this.rtName = rtName;
 	}
 
-	public String getRestaurantTel() {
-		return restaurantTel;
+	public String getRtTel() {
+		return rtTel;
 	}
 
-	public void setRestaurantTel(String restaurantTel) {
-		this.restaurantTel = restaurantTel;
+	public void setRtTel(String rtTel) {
+		this.rtTel = rtTel;
 	}
 
-	public String getRestaurantField() {
-		return restaurantField;
+	public String getRtField() {
+		return rtField;
 	}
 
-	public void setRestaurantField(String restaurantField) {
-		this.restaurantField = restaurantField;
+	public void setRtField(String rtField) {
+		this.rtField = rtField;
 	}
 
-	public String getRestaurantHoliday() {
-		return restaurantHoliday;
+	public String getRtHoliday() {
+		return rtHoliday;
 	}
 
-	public void setRestaurantHoliday(String restaurantHoliday) {
-		this.restaurantHoliday = restaurantHoliday;
+	public void setRtHoliday(String rtHoliday) {
+		this.rtHoliday = rtHoliday;
 	}
 
-	public Date getRestaurantOpen() {
-		return restaurantOpen;
+	public Date getRtOpen() {
+		return rtOpen;
 	}
 
-	public void setRestaurantOpen(Date restaurantOpen) {
-		this.restaurantOpen = restaurantOpen;
+	public void setRtOpen(Date rtOpen) {
+		this.rtOpen = rtOpen;
 	}
 
-	public Date getRestaurantClose() {
-		return restaurantClose;
+	public Date getRtClose() {
+		return rtClose;
 	}
 
-	public void setRestaurantClose(Date restaurantClose) {
-		this.restaurantClose = restaurantClose;
+	public void setRtClose(Date rtClose) {
+		this.rtClose = rtClose;
 	}
 
-	public String getRestaurantImg() {
-		return restaurantImg;
+	public String getRtImg() {
+		return rtImg;
 	}
 
-	public void setRestaurantImg(String restaurantImg) {
-		this.restaurantImg = restaurantImg;
+	public void setRtImg(String rtImg) {
+		this.rtImg = rtImg;
 	}
 
-	public String getRestaurantSaveImg() {
-		return restaurantSaveImg;
+	public String getRtSaveImg() {
+		return rtSaveImg;
 	}
 
-	public void setRestaurantSaveImg(String restaurantSaveImg) {
-		this.restaurantSaveImg = restaurantSaveImg;
+	public void setRtSaveImg(String rtSaveImg) {
+		this.rtSaveImg = rtSaveImg;
 	}
 
-	public String getRestaurantLocation() {
-		return restaurantLocation;
+	public String getRtAddress() {
+		return rtAddress;
 	}
 
-	public void setRestaurantLocation(String restaurantLocation) {
-		this.restaurantLocation = restaurantLocation;
+	public void setRtAddress(String rtAddress) {
+		this.rtAddress = rtAddress;
 	}
 
-	public int getRestaurantLocationLatitude() {
-		return restaurantLocationLatitude;
+	public int getRtLatitude() {
+		return rtLatitude;
 	}
 
-	public void setRestaurantLocationLatitude(int restaurantLocationLatitude) {
-		this.restaurantLocationLatitude = restaurantLocationLatitude;
+	public void setRtLatitude(int rtLatitude) {
+		this.rtLatitude = rtLatitude;
 	}
 
-	public int getRestaurantLocationLongitude() {
-		return restaurantLocationLongitude;
+	public int getRtLongitude() {
+		return rtLongitude;
 	}
 
-	public void setRestaurantLocationLongitude(int restaurantLocationLongitude) {
-		this.restaurantLocationLongitude = restaurantLocationLongitude;
+	public void setRtLongitude(int rtLongitude) {
+		this.rtLongitude = rtLongitude;
 	}
 
-	public int getRestaurantCapacity() {
-		return restaurantCapacity;
+	public int getRtCapacity() {
+		return rtCapacity;
 	}
 
-	public void setRestaurantCapacity(int restaurantCapacity) {
-		this.restaurantCapacity = restaurantCapacity;
+	public void setRtCapacity(int rtCapacity) {
+		this.rtCapacity = rtCapacity;
 	}
 
-	public int getRestaurantDeposit() {
-		return restaurantDeposit;
+	public int getRtDeposit() {
+		return rtDeposit;
 	}
 
-	public void setRestaurantDeposit(int restaurantDeposit) {
-		this.restaurantDeposit = restaurantDeposit;
+	public void setRtDeposit(int rtDeposit) {
+		this.rtDeposit = rtDeposit;
 	}
 
 	@Override
 	public String toString() {
-		return "Restaurant [businessId=" + businessId + ", businessNum=" + businessNum + ", restaurantName="
-				+ restaurantName + ", restaurantTel=" + restaurantTel + ", restaurantField=" + restaurantField
-				+ ", restaurantHoliday=" + restaurantHoliday + ", restaurantOpen=" + restaurantOpen
-				+ ", restaurantClose=" + restaurantClose + ", restaurantImg=" + restaurantImg + ", restaurantSaveImg="
-				+ restaurantSaveImg + ", restaurantLocation=" + restaurantLocation + ", restaurantLocationLatitude="
-				+ restaurantLocationLatitude + ", restaurantLocationLongitude=" + restaurantLocationLongitude
-				+ ", restaurantCapacity=" + restaurantCapacity + ", restaurantDeposit=" + restaurantDeposit + "]";
+		return "Restaurant [businessId=" + businessId + ", rtNum=" + rtNum + ", rtName=" + rtName + ", rtTel=" + rtTel
+				+ ", rtField=" + rtField + ", rtHoliday=" + rtHoliday + ", rtOpen=" + rtOpen + ", rtClose=" + rtClose
+				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtLatitude="
+				+ rtLatitude + ", rtLongitude=" + rtLongitude + ", rtCapacity=" + rtCapacity + ", rtDeposit="
+				+ rtDeposit + "]";
 	}
 
 	@Override
@@ -179,20 +176,20 @@ public class Restaurant implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
-		result = prime * result + businessNum;
-		result = prime * result + restaurantCapacity;
-		result = prime * result + ((restaurantClose == null) ? 0 : restaurantClose.hashCode());
-		result = prime * result + restaurantDeposit;
-		result = prime * result + ((restaurantField == null) ? 0 : restaurantField.hashCode());
-		result = prime * result + ((restaurantHoliday == null) ? 0 : restaurantHoliday.hashCode());
-		result = prime * result + ((restaurantImg == null) ? 0 : restaurantImg.hashCode());
-		result = prime * result + ((restaurantLocation == null) ? 0 : restaurantLocation.hashCode());
-		result = prime * result + restaurantLocationLatitude;
-		result = prime * result + restaurantLocationLongitude;
-		result = prime * result + ((restaurantName == null) ? 0 : restaurantName.hashCode());
-		result = prime * result + ((restaurantOpen == null) ? 0 : restaurantOpen.hashCode());
-		result = prime * result + ((restaurantSaveImg == null) ? 0 : restaurantSaveImg.hashCode());
-		result = prime * result + ((restaurantTel == null) ? 0 : restaurantTel.hashCode());
+		result = prime * result + ((rtAddress == null) ? 0 : rtAddress.hashCode());
+		result = prime * result + rtCapacity;
+		result = prime * result + ((rtClose == null) ? 0 : rtClose.hashCode());
+		result = prime * result + rtDeposit;
+		result = prime * result + ((rtField == null) ? 0 : rtField.hashCode());
+		result = prime * result + ((rtHoliday == null) ? 0 : rtHoliday.hashCode());
+		result = prime * result + ((rtImg == null) ? 0 : rtImg.hashCode());
+		result = prime * result + rtLatitude;
+		result = prime * result + rtLongitude;
+		result = prime * result + ((rtName == null) ? 0 : rtName.hashCode());
+		result = prime * result + rtNum;
+		result = prime * result + ((rtOpen == null) ? 0 : rtOpen.hashCode());
+		result = prime * result + ((rtSaveImg == null) ? 0 : rtSaveImg.hashCode());
+		result = prime * result + ((rtTel == null) ? 0 : rtTel.hashCode());
 		return result;
 	}
 
@@ -210,63 +207,64 @@ public class Restaurant implements Serializable{
 				return false;
 		} else if (!businessId.equals(other.businessId))
 			return false;
-		if (businessNum != other.businessNum)
-			return false;
-		if (restaurantCapacity != other.restaurantCapacity)
-			return false;
-		if (restaurantClose == null) {
-			if (other.restaurantClose != null)
+		if (rtAddress == null) {
+			if (other.rtAddress != null)
 				return false;
-		} else if (!restaurantClose.equals(other.restaurantClose))
+		} else if (!rtAddress.equals(other.rtAddress))
 			return false;
-		if (restaurantDeposit != other.restaurantDeposit)
+		if (rtCapacity != other.rtCapacity)
 			return false;
-		if (restaurantField == null) {
-			if (other.restaurantField != null)
+		if (rtClose == null) {
+			if (other.rtClose != null)
 				return false;
-		} else if (!restaurantField.equals(other.restaurantField))
+		} else if (!rtClose.equals(other.rtClose))
 			return false;
-		if (restaurantHoliday == null) {
-			if (other.restaurantHoliday != null)
+		if (rtDeposit != other.rtDeposit)
+			return false;
+		if (rtField == null) {
+			if (other.rtField != null)
 				return false;
-		} else if (!restaurantHoliday.equals(other.restaurantHoliday))
+		} else if (!rtField.equals(other.rtField))
 			return false;
-		if (restaurantImg == null) {
-			if (other.restaurantImg != null)
+		if (rtHoliday == null) {
+			if (other.rtHoliday != null)
 				return false;
-		} else if (!restaurantImg.equals(other.restaurantImg))
+		} else if (!rtHoliday.equals(other.rtHoliday))
 			return false;
-		if (restaurantLocation == null) {
-			if (other.restaurantLocation != null)
+		if (rtImg == null) {
+			if (other.rtImg != null)
 				return false;
-		} else if (!restaurantLocation.equals(other.restaurantLocation))
+		} else if (!rtImg.equals(other.rtImg))
 			return false;
-		if (restaurantLocationLatitude != other.restaurantLocationLatitude)
+		if (rtLatitude != other.rtLatitude)
 			return false;
-		if (restaurantLocationLongitude != other.restaurantLocationLongitude)
+		if (rtLongitude != other.rtLongitude)
 			return false;
-		if (restaurantName == null) {
-			if (other.restaurantName != null)
+		if (rtName == null) {
+			if (other.rtName != null)
 				return false;
-		} else if (!restaurantName.equals(other.restaurantName))
+		} else if (!rtName.equals(other.rtName))
 			return false;
-		if (restaurantOpen == null) {
-			if (other.restaurantOpen != null)
-				return false;
-		} else if (!restaurantOpen.equals(other.restaurantOpen))
+		if (rtNum != other.rtNum)
 			return false;
-		if (restaurantSaveImg == null) {
-			if (other.restaurantSaveImg != null)
+		if (rtOpen == null) {
+			if (other.rtOpen != null)
 				return false;
-		} else if (!restaurantSaveImg.equals(other.restaurantSaveImg))
+		} else if (!rtOpen.equals(other.rtOpen))
 			return false;
-		if (restaurantTel == null) {
-			if (other.restaurantTel != null)
+		if (rtSaveImg == null) {
+			if (other.rtSaveImg != null)
 				return false;
-		} else if (!restaurantTel.equals(other.restaurantTel))
+		} else if (!rtSaveImg.equals(other.rtSaveImg))
+			return false;
+		if (rtTel == null) {
+			if (other.rtTel != null)
+				return false;
+		} else if (!rtTel.equals(other.rtTel))
 			return false;
 		return true;
 	}
+	
 	
 	
 }

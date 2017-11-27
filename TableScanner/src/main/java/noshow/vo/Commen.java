@@ -6,18 +6,18 @@ import java.util.Date;
 public class Commen implements Serializable{
 	private int commenNum; /* 댓글일련번호 */
 	private Board boardNum; /* 글번호 */
-	private String writerId; /* 작성자 아이디 */
-	private String commenContext; /* 댓글내용 */
-	private Date commenWritingTime; /* 작성시간 */
+	private String commenId; /* 작성자 아이디 */
+	private String commenText; /* 댓글내용 */
+	private Date commenTime; /* 작성시간 */
 	
 	public Commen() {}
-	
-	public Commen(int commenNum, Board boardNum, String writerId, String commenContext, Date commenWritingTime) {
+
+	public Commen(int commenNum, Board boardNum, String commenId, String commenText, Date commenTime) {
 		this.commenNum = commenNum;
 		this.boardNum = boardNum;
-		this.writerId = writerId;
-		this.commenContext = commenContext;
-		this.commenWritingTime = commenWritingTime;
+		this.commenId = commenId;
+		this.commenText = commenText;
+		this.commenTime = commenTime;
 	}
 
 	public int getCommenNum() {
@@ -36,34 +36,34 @@ public class Commen implements Serializable{
 		this.boardNum = boardNum;
 	}
 
-	public String getWriterId() {
-		return writerId;
+	public String getCommenId() {
+		return commenId;
 	}
 
-	public void setWriterId(String writerId) {
-		this.writerId = writerId;
+	public void setCommenId(String commenId) {
+		this.commenId = commenId;
 	}
 
-	public String getCommenContext() {
-		return commenContext;
+	public String getCommenText() {
+		return commenText;
 	}
 
-	public void setCommenContext(String commenContext) {
-		this.commenContext = commenContext;
+	public void setCommenText(String commenText) {
+		this.commenText = commenText;
 	}
 
-	public Date getCommenWritingTime() {
-		return commenWritingTime;
+	public Date getCommenTime() {
+		return commenTime;
 	}
 
-	public void setCommenWritingTime(Date commenWritingTime) {
-		this.commenWritingTime = commenWritingTime;
+	public void setCommenTime(Date commenTime) {
+		this.commenTime = commenTime;
 	}
 
 	@Override
 	public String toString() {
-		return "Commen [commenNum=" + commenNum + ", boardNum=" + boardNum + ", writerId=" + writerId
-				+ ", commenContext=" + commenContext + ", commenWritingTime=" + commenWritingTime + "]";
+		return "Commen [commenNum=" + commenNum + ", boardNum=" + boardNum + ", commenId=" + commenId + ", commenText="
+				+ commenText + ", commenTime=" + commenTime + "]";
 	}
 
 	@Override
@@ -71,10 +71,10 @@ public class Commen implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((boardNum == null) ? 0 : boardNum.hashCode());
-		result = prime * result + ((commenContext == null) ? 0 : commenContext.hashCode());
+		result = prime * result + ((commenId == null) ? 0 : commenId.hashCode());
 		result = prime * result + commenNum;
-		result = prime * result + ((commenWritingTime == null) ? 0 : commenWritingTime.hashCode());
-		result = prime * result + ((writerId == null) ? 0 : writerId.hashCode());
+		result = prime * result + ((commenText == null) ? 0 : commenText.hashCode());
+		result = prime * result + ((commenTime == null) ? 0 : commenTime.hashCode());
 		return result;
 	}
 
@@ -92,25 +92,26 @@ public class Commen implements Serializable{
 				return false;
 		} else if (!boardNum.equals(other.boardNum))
 			return false;
-		if (commenContext == null) {
-			if (other.commenContext != null)
+		if (commenId == null) {
+			if (other.commenId != null)
 				return false;
-		} else if (!commenContext.equals(other.commenContext))
+		} else if (!commenId.equals(other.commenId))
 			return false;
 		if (commenNum != other.commenNum)
 			return false;
-		if (commenWritingTime == null) {
-			if (other.commenWritingTime != null)
+		if (commenText == null) {
+			if (other.commenText != null)
 				return false;
-		} else if (!commenWritingTime.equals(other.commenWritingTime))
+		} else if (!commenText.equals(other.commenText))
 			return false;
-		if (writerId == null) {
-			if (other.writerId != null)
+		if (commenTime == null) {
+			if (other.commenTime != null)
 				return false;
-		} else if (!writerId.equals(other.writerId))
+		} else if (!commenTime.equals(other.commenTime))
 			return false;
 		return true;
 	}
+	
 	
 	
 }

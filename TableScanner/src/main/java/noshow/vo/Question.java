@@ -6,15 +6,15 @@ import java.util.Date;
 public class Question implements Serializable{
 	private int questionNum; /* 문의일련번호 */
 	private Member memberId; /* 회원아이디 */
-	private String questionContent; /* 내용 */
+	private String questionText; /* 내용 */
 	private Date questionTime; /* 작성시간 */
 	
 	public Question() {}
-	
-	public Question(int questionNum, Member memberId, String questionContent, Date questionTime) {
+
+	public Question(int questionNum, Member memberId, String questionText, Date questionTime) {
 		this.questionNum = questionNum;
 		this.memberId = memberId;
-		this.questionContent = questionContent;
+		this.questionText = questionText;
 		this.questionTime = questionTime;
 	}
 
@@ -34,12 +34,12 @@ public class Question implements Serializable{
 		this.memberId = memberId;
 	}
 
-	public String getQuestionContent() {
-		return questionContent;
+	public String getQuestionText() {
+		return questionText;
 	}
 
-	public void setQuestionContent(String questionContent) {
-		this.questionContent = questionContent;
+	public void setQuestionText(String questionText) {
+		this.questionText = questionText;
 	}
 
 	public Date getQuestionTime() {
@@ -52,8 +52,8 @@ public class Question implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Question [questionNum=" + questionNum + ", memberId=" + memberId + ", questionContent="
-				+ questionContent + ", questionTime=" + questionTime + "]";
+		return "Question [questionNum=" + questionNum + ", memberId=" + memberId + ", questionText=" + questionText
+				+ ", questionTime=" + questionTime + "]";
 	}
 
 	@Override
@@ -61,8 +61,8 @@ public class Question implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
-		result = prime * result + ((questionContent == null) ? 0 : questionContent.hashCode());
 		result = prime * result + questionNum;
+		result = prime * result + ((questionText == null) ? 0 : questionText.hashCode());
 		result = prime * result + ((questionTime == null) ? 0 : questionTime.hashCode());
 		return result;
 	}
@@ -81,12 +81,12 @@ public class Question implements Serializable{
 				return false;
 		} else if (!memberId.equals(other.memberId))
 			return false;
-		if (questionContent == null) {
-			if (other.questionContent != null)
-				return false;
-		} else if (!questionContent.equals(other.questionContent))
-			return false;
 		if (questionNum != other.questionNum)
+			return false;
+		if (questionText == null) {
+			if (other.questionText != null)
+				return false;
+		} else if (!questionText.equals(other.questionText))
 			return false;
 		if (questionTime == null) {
 			if (other.questionTime != null)
@@ -95,6 +95,7 @@ public class Question implements Serializable{
 			return false;
 		return true;
 	}
+	
 	
 	
 }
