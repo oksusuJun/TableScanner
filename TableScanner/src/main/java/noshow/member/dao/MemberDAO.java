@@ -1,7 +1,5 @@
 package noshow.member.dao;
 
-import org.apache.ibatis.session.SqlSession;
-
 import noshow.vo.Member;
 
 public interface MemberDAO {

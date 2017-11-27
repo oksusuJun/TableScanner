@@ -3,17 +3,19 @@ package noshow.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import noshow.member.service.MemberService;
-import noshow.vo.Member;
+import noshow.menu.service.MenuService;
+import noshow.vo.Classification;
 
-public class Test {
+public class memuTest {
+	
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
 		
-		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
+		MenuService service = (MenuService)ctx.getBean("menuServiceImpl");
 		
-		Member member2 = new Member("id2-2","password");
-		int i = service.getUserByUserId(member2);
+		Classification classification = new Classification(2, "id-1", "찌개류");
+		System.out.println(classification);
+		int i = service.insertclassification(classification);
 		
 		System.out.println(i);
 		
