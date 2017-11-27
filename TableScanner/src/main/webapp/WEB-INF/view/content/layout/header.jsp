@@ -25,28 +25,42 @@ header {
 	height: 60px;
 	background-color: #dc1400;
 	min-width: 1080px;
+	float: left;
+}
+
+.header>a {
+	float: left;
 }
 
 .header_content {
 	height: 100%;
 	width: 1080px;
+	text-align: left;
 }
 
 .logo {
+	width: 250px;
 	height: 100%;
-	float: left;
-	line-height: 60px;
-	font-size: 26px;
+	text-align: left;
 }
 
 .logo>a {
 	color: #fff;
 	font-weight: bold;
 }
-
+.header_content > a{
+	float: left;
+}
 .menu {
 	height: 100%;
 	float: right;
+	width: 30%;
+}
+
+.mainmenu {
+	width: 30%;
+	height: 100%;
+	float: left;
 }
 
 .menu>button {
@@ -184,53 +198,48 @@ header {
 	margin-top: 8px;
 }
 </style>
-	<!-- 팝업창 -->
-	<div class="dialog_back">
+<!-- 팝업창 -->
+<div class="dialog_back">
 
-		<!-- 로그인 팝업창 -->
-		<div class="dialog_login">
-			<div class="login_form_logo">logo</div>
-			<form>
-				<input type="text" name="id" placeholder="ID를 입력해주세요."> 
-				<input type="password" name="password" placeholder="Password를 입력해주세요.">
-				<div class="Search">
-					<a href="#" class="SearchId">아이디 찾기 </a> 
-					<a href="#" class="SearchPassword">비밀번호 찾기 </a>
-				</div>
-				<input type="submit" class="submit">
-			</form>
-			<div class="join_div">
-				<span>회원가입 하시겠어요?</span>
-				<button class="join_button">회원가입</button>
+	<!-- 로그인 팝업창 -->
+	<div class="dialog_login">
+		<div class="login_form_logo">logo</div>
+		<form>
+			<input type="text" name="id" placeholder="ID를 입력해주세요."> <input type="password" name="password" placeholder="Password를 입력해주세요.">
+			<div class="Search">
+				<a href="#" class="SearchId">아이디 찾기 </a> <a href="#" class="SearchPassword">비밀번호 찾기 </a>
 			</div>
+			<input type="submit" class="submit">
+		</form>
+		<div class="join_div">
+			<span>회원가입 하시겠어요?</span>
+			<button class="join_button">회원가입</button>
 		</div>
-
-		<!-- 회원가입 팝업창 -->
-		<div class="dialog_join">
-			<div class="join_form_logo">logo</div>
-			<form>
-				<input type="text" name="id" placeholder="ID를 입력해주세요."> 
-				<input type="password" name="password" placeholder="Password를 입력해주세요."> 
-				<input type="text" name="email" placeholder="Email을 입력해주세요."> 
-				<input type="text" name="birthday" placeholder="생년월일를 입력해주세요.">
-				<div class="gender">
-					<label>남성</label> <input type="radio" name="gender" class="radio"> <label>여성</label> <input type="radio" name="gender" class="radio">
-				</div>
-				<input type="text" name="phonenum" placeholder="전화번호를 입력해주세요."> <input type="submit" class="submit">
-			</form>
-		</div>
-
 	</div>
 
-	<header>
-		<div class="header_content">
-			<div class="logo">
-				<a href="#"> <span>Logo</span>
-				</a>
+	<!-- 회원가입 팝업창 -->
+	<div class="dialog_join">
+		<div class="join_form_logo">logo</div>
+		<form>
+			<input type="text" name="id" placeholder="ID를 입력해주세요."> <input type="password" name="password" placeholder="Password를 입력해주세요."> <input
+				type="text" name="email" placeholder="Email을 입력해주세요."
+			> <input type="text" name="birthday" placeholder="생년월일를 입력해주세요.">
+			<div class="gender">
+				<label>남성</label> <input type="radio" name="gender" class="radio"> <label>여성</label> <input type="radio" name="gender" class="radio">
 			</div>
-			<div class="mainmenu"></div>
-			<div class="menu">
-				<button class="login">로그인</button>
-			</div>
+			<input type="text" name="phonenum" placeholder="전화번호를 입력해주세요."> <input type="submit" class="submit">
+		</form>
+	</div>
+
+</div>
+
+<header>
+	<div class="header_content">
+		<a href="#"> <span style="line-height: 60px; font-size: 32px;">TableScanner</span>
+		</a>
+		<div class="mainmenu"></div>
+		<div class="menu">
+			<button class="login">로그인</button>
 		</div>
-	</header>
+	</div>
+</header>
