@@ -6,7 +6,6 @@ public class Member implements Serializable{
 	private String memberId;	/* 회원아이디 */
 	private String memberPassword;	/* 비밀번호 */
 	private String memberName;	/* 이름 */
-	private int memberAge; /* 나이 */
 	private String memberGender; /* 성별 */
 	private String memberTel; /* 전화번호 */
 	private String memberBirthday; /* 생년월일 */
@@ -20,14 +19,12 @@ public class Member implements Serializable{
 		this.memberId = memberId;
 		this.memberPassword = memberPassword;
 		this.memberName = memberName;
-		this.memberAge = memberAge;
 		this.memberGender = memberGender;
 		this.memberTel = memberTel;
 		this.memberBirthday = memberBirthday;
 		this.memberEmail = memberEmail;
 	}
 
-	//getters and setters
 	public String getMemberId() {
 		return memberId;
 	}
@@ -50,14 +47,6 @@ public class Member implements Serializable{
 
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
-	}
-
-	public int getMemberAge() {
-		return memberAge;
-	}
-
-	public void setMemberAge(int memberAge) {
-		this.memberAge = memberAge;
 	}
 
 	public String getMemberGender() {
@@ -91,20 +80,18 @@ public class Member implements Serializable{
 	public void setMemberEmail(String memberEmail) {
 		this.memberEmail = memberEmail;
 	}
-	
-	// tostring
+
 	@Override
 	public String toString() {
 		return "Member [memberId=" + memberId + ", memberPassword=" + memberPassword + ", memberName=" + memberName
-				+ ", memberAge=" + memberAge + ", memberGender=" + memberGender + ", memberTel=" + memberTel
-				+ ", memberBirthday=" + memberBirthday + ", memberEmail=" + memberEmail + "]";
+				+ ", memberGender=" + memberGender + ", memberTel=" + memberTel + ", memberBirthday=" + memberBirthday
+				+ ", memberEmail=" + memberEmail + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + memberAge;
 		result = prime * result + ((memberBirthday == null) ? 0 : memberBirthday.hashCode());
 		result = prime * result + ((memberEmail == null) ? 0 : memberEmail.hashCode());
 		result = prime * result + ((memberGender == null) ? 0 : memberGender.hashCode());
@@ -124,8 +111,6 @@ public class Member implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Member other = (Member) obj;
-		if (memberAge != other.memberAge)
-			return false;
 		if (memberBirthday == null) {
 			if (other.memberBirthday != null)
 				return false;
@@ -164,6 +149,6 @@ public class Member implements Serializable{
 		return true;
 	}
 
-	
+
 	
 }
