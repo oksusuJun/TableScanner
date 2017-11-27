@@ -12,25 +12,28 @@ public class Authority implements Serializable{
 		this.memberId = memberId;
 		this.authority = authority;
 	}
-	
+
 	public Member getMemberId() {
 		return memberId;
 	}
+
 	public void setMemberId(Member memberId) {
 		this.memberId = memberId;
 	}
+
 	public String getAuthority() {
 		return authority;
 	}
+
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Authority [memberId=" + memberId + ", authority=" + authority + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,6 +42,7 @@ public class Authority implements Serializable{
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

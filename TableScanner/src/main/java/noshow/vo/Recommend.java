@@ -3,32 +3,32 @@ package noshow.vo;
 import java.io.Serializable;
 
 public class Recommend implements Serializable{
-	private int recommentNum; /* 추천리스트번호 */
-	private String recommenderId; /* 추천인 아이디 */
+	private int recommendNum; /* 추천리스트번호 */
+	private String recommendId; /* 추천인 아이디 */
 	private Review reviewNum; /* 후기 글번호 */
 	
 	public Recommend() {}
 
-	public Recommend(int recommentNum, String recommenderId, Review reviewNum) {
-		this.recommentNum = recommentNum;
-		this.recommenderId = recommenderId;
+	public Recommend(int recommendNum, String recommendId, Review reviewNum) {
+		this.recommendNum = recommendNum;
+		this.recommendId = recommendId;
 		this.reviewNum = reviewNum;
 	}
 
-	public int getRecommentNum() {
-		return recommentNum;
+	public int getRecommendNum() {
+		return recommendNum;
 	}
 
-	public void setRecommentNum(int recommentNum) {
-		this.recommentNum = recommentNum;
+	public void setRecommendNum(int recommendNum) {
+		this.recommendNum = recommendNum;
 	}
 
-	public String getRecommenderId() {
-		return recommenderId;
+	public String getRecommendId() {
+		return recommendId;
 	}
 
-	public void setRecommenderId(String recommenderId) {
-		this.recommenderId = recommenderId;
+	public void setRecommendId(String recommendId) {
+		this.recommendId = recommendId;
 	}
 
 	public Review getReviewNum() {
@@ -41,16 +41,16 @@ public class Recommend implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Recommend [recommentNum=" + recommentNum + ", recommenderId=" + recommenderId + ", reviewNum="
-				+ reviewNum + "]";
+		return "Recommend [recommendNum=" + recommendNum + ", recommendId=" + recommendId + ", reviewNum=" + reviewNum
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((recommenderId == null) ? 0 : recommenderId.hashCode());
-		result = prime * result + recommentNum;
+		result = prime * result + ((recommendId == null) ? 0 : recommendId.hashCode());
+		result = prime * result + recommendNum;
 		result = prime * result + ((reviewNum == null) ? 0 : reviewNum.hashCode());
 		return result;
 	}
@@ -64,12 +64,12 @@ public class Recommend implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Recommend other = (Recommend) obj;
-		if (recommenderId == null) {
-			if (other.recommenderId != null)
+		if (recommendId == null) {
+			if (other.recommendId != null)
 				return false;
-		} else if (!recommenderId.equals(other.recommenderId))
+		} else if (!recommendId.equals(other.recommendId))
 			return false;
-		if (recommentNum != other.recommentNum)
+		if (recommendNum != other.recommendNum)
 			return false;
 		if (reviewNum == null) {
 			if (other.reviewNum != null)
@@ -79,4 +79,5 @@ public class Recommend implements Serializable{
 		return true;
 	}
 
+	
 }
