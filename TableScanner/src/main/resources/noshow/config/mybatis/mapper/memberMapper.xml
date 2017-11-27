@@ -5,7 +5,7 @@
 	
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO member
-		VALUES (#{memberId}, #{memberPassword} , #{memberName} , #{memberAge} , #{memberGender} , #{memberTel},#{memberBirthday} , #{memberBirthday} , #{memberEmail})
+		VALUES (#{memberId}, #{memberPassword} , #{memberName} , #{memberGender} , #{memberTel} , #{memberBirthday}, #{memberEmail})
 	</insert>
 
 </mapper>

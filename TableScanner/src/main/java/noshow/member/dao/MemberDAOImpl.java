@@ -3,9 +3,11 @@ package noshow.member.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import noshow.vo.Member;
 
+@Repository
 public class MemberDAOImpl implements MemberDAO {
 	
 	@Autowired
@@ -16,24 +18,24 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	
 	@Override
-	public int insertMember(SqlSession session, Member member) {
+	public int insertMember(Member member) {
 		return session.insert(makeSqlId("insertMember"), member);
 	}
 	
 	@Override
-	public int updateMemberById(SqlSession session, Member member) {
+	public int updateMemberById( Member member) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	@Override
-	public int deleteMemberById(SqlSession session, String email) {
+	public int deleteMemberById(String email) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	@Override
-	public Member selectMemberById(SqlSession session, String email) {
+	public Member selectMemberById(String email) {
 		// TODO Auto-generated method stub
 		return null;
 	}

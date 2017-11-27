@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
-	<context:component-scan base-package="com.mydomain.service.impl,com.mydomain.dao.impl"/>
+	<context:component-scan base-package="noshow.member.service, noshow.member.dao"/>
 	
 	<!-- mybatis 설정 -->
 	<bean name="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"
@@ -21,7 +21,7 @@
 			  p:maxTotal="100"/>
 	<bean 	name="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
 			   	p:dataSource-ref="dataSource"
-			   	p:configLocation="classpath:com/mydomain/config/mybatis/mybatis-config.xml"/>
+			   	p:configLocation="classpath:noshow/config/mybatis/mybatis-config.xml"/>
 	<bean 	name="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"
 				c:sqlSessionFactory-ref="sqlSessionFactoryBean"/>
 	
