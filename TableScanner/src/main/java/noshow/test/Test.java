@@ -12,7 +12,7 @@ public class Test {
 		
 		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
 		
-		Member member = new Member("id","password");
+		Member member = new Member("id2-2","password");
 		int i = service.getUserByUserId(member);
 		
 		System.out.println(i);
