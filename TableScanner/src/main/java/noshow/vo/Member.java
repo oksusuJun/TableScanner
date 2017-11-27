@@ -1,6 +1,8 @@
 package noshow.vo;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
 	private String memberId;	/* 회원아이디 */
 	private String memberPassword;	/* 비밀번호 */
 	private String memberName;	/* 이름 */
