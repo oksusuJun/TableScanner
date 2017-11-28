@@ -1,6 +1,9 @@
 -- 회원 테이블 
-insert into MEMBER values('id-1','id-1','김호규','남','01029884403', '92-01-01', 'hgkimer@naver.com');
+insert into MEMBER values('id-1','id-1','김호규','남','01029884403', sysdate, 'hgkimer@naver.com');
 insert into AUTHORITY(member_id) values('id-1');
+insert into member(member_id, member_password, member_name, member_gender, member_tel, member_birthday, member_email) 
+			values('as','as','윤동웅','남', '01063311512', sysdate, 'dada5412@naver.com');
+select * from member where member_id = 'as';
 insert into MEMBER values('id-2','id-2','김호현','남','01092931027', '1992-01-01', 'dada5412@naver.com');
 insert into MEMBER values('id-3','id-3','박현준','남','01052443828', '92-01-01', 'phj6207@naver.com');
 insert into MEMBER values('id-4','id-4','손경심','여','01057063525', '93-01-01', 'rudtla9776@naver.com');

@@ -10,4 +10,8 @@
 	<!-- Controller들 bean으로 자동등록 처리 -->
 	<context:component-scan base-package="noshow.controller" />
 	<mvc:annotation-driven />
+	
+	<mvc:view-controller path="index.do" view-name="/index.jsp"/>
+	<mvc:view-controller path="login_form.do" view-name="/WEB-INF/login_form.jsp"/>
+
 </beans>
