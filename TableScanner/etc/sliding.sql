@@ -19,9 +19,9 @@ insert into MEMBER values('id-15','id-15','장길웅','남','01092905264', '98-0
 select * from MEMBER
 
 -- 음식점 정보
-insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 123,231,20,5000);
+insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 50, 5000);
 update AUTHORITY set AUTHORITY = '1' where member_id = 'id-1';
-insert into RESTAURANT values('id-3', 33, '현준이네네', '1111', '치킨집', 'mon', sysdate, sysdate, '현준1', '현준2', '명지대', 1232,2231,30,50000);
+insert into RESTAURANT values('id-3', 33, '현준이네네', '1111', '치킨집', 'mon', sysdate, sysdate, '현준1', '현준2', '명지대',30,50000);
 insert into RESTAURANT values('id-13', 1313, '지수네', '1313', '족발', 'mon', sysdate, sysdate, '지수1', '지수1', '광교', 1323,2231,10,3000);
 insert into RESTAURANT values('id-7', 77, '동웅이네', '7777', '보쌈', 'mon', sysdate, sysdate, '동웅1', '동웅1', '기흥', 233,331,40,10000);
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import noshow.menu.dao.MenuDAO;
 import noshow.vo.Classification;
+import noshow.vo.Menu;
 
 @Repository
 public class MenuDAOImpl implements MenuDAO{
@@ -30,6 +31,11 @@ public class MenuDAOImpl implements MenuDAO{
 	@Override
 	public int deleteClassification(int classificationNum) {
 		return session.update(makeSqlId("deleteClassification"), classificationNum);
+	}
+
+	@Override
+	public int insertMenu(Menu menu) {
+		return session.insert(makeSqlId("insertMenu"), menu);
 	}
 
 }

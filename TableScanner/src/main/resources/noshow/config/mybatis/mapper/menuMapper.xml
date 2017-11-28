@@ -4,23 +4,28 @@
 
 <!-- insertClassification -->
 <insert id="insertClassification" parameterType="noshow.vo.Classification">
-	insert into classification(classification_num, bussiness_id, classification_name)
+	insert into classification(classification_num, business_id, classification_name)
 	values(#{classificationNum}, #{businessId}, #{classificationName})
 </insert>
 
 <!-- updateClassificationNum -->
 <update id="updateClassification" parameterType="noshow.vo.Classification">
 	update classification
-	set bussiness_id = #{classificationNum},
-		classification_name = #{businessId}
-	where classification_num = #{classificationName}
+	set business_id = #{businessId},
+		classification_name = #{classificationName}
+	where classification_num = #{classificationNum}
 </update>
 
+<!-- 대분류 메뉴 삭제! -->
 <delete id="deleteClassification" parameterType="int">
 	delete from Classification 
 	where Classification_num = #{classificationName}
 </delete>
 
+<!-- 메뉴등록 -->
+<insert id="insertMenu" parameterType="Menu">
+	insert into menu(menu_num, menu_name, menu_comment, menu_price, menu_picture, classification_num, business_id)
+	values(#{menuNum}, #{menuName}, #{menuComment}, #{menuPrice}, #{menuPicture}, #{classificationNum}, #{businessId})
+</insert>
 
-	
 </mapper>
