@@ -3,7 +3,7 @@ package noshow.vo;
 import java.io.Serializable;
 
 public class Table implements Serializable{
-	private int TabelSeq; /* 테이블리스트 번호*/
+	private int TableSeq; /* 테이블리스트 번호*/
 	private int tableNum; /* 테이블 번호 */
 	private int tableSeats; /* 인원 */
 	private int xLocation; /* x좌표 */
@@ -12,8 +12,8 @@ public class Table implements Serializable{
 	
 	public Table() {}
 
-	public Table(int tabelSeq, int tableNum, int tableSeats, int xLocation, int yLocation, Restaurant businessId) {
-		TabelSeq = tabelSeq;
+	public Table(int tableSeq, int tableNum, int tableSeats, int xLocation, int yLocation, Restaurant businessId) {
+		TableSeq = tableSeq;
 		this.tableNum = tableNum;
 		this.tableSeats = tableSeats;
 		this.xLocation = xLocation;
@@ -21,12 +21,12 @@ public class Table implements Serializable{
 		this.businessId = businessId;
 	}
 
-	public int getTabelSeq() {
-		return TabelSeq;
+	public int getTableSeq() {
+		return TableSeq;
 	}
 
-	public void setTabelSeq(int tabelSeq) {
-		TabelSeq = tabelSeq;
+	public void setTableSeq(int tableSeq) {
+		TableSeq = tableSeq;
 	}
 
 	public int getTableNum() {
@@ -71,7 +71,7 @@ public class Table implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Table [TabelSeq=" + TabelSeq + ", tableNum=" + tableNum + ", tableSeats=" + tableSeats + ", xLocation="
+		return "Table [TabelSeq=" + TableSeq + ", tableNum=" + tableNum + ", tableSeats=" + tableSeats + ", xLocation="
 				+ xLocation + ", yLocation=" + yLocation + ", businessId=" + businessId + "]";
 	}
 
@@ -79,7 +79,7 @@ public class Table implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + TabelSeq;
+		result = prime * result + TableSeq;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
 		result = prime * result + tableNum;
 		result = prime * result + tableSeats;
@@ -97,7 +97,7 @@ public class Table implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Table other = (Table) obj;
-		if (TabelSeq != other.TabelSeq)
+		if (TableSeq != other.TableSeq)
 			return false;
 		if (businessId == null) {
 			if (other.businessId != null)
