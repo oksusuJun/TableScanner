@@ -7,7 +7,8 @@ public class Reservation implements Serializable {
 	private int resNum; /* 예약리스트번호 */
 	private String resDate; /* 예약날짜 */
 	private int resPeople; /* 인원 */
-	private String resTime; /* 예약원하는시간 */
+	private String resStartTime; /* 예약원하는시간 */
+	private String resEndTime; /* 예약 종료 시간 */
 	private Date resPaidTime; /* 예약결제완료한시간 */
 	private String resPayStatement; /* 결제유무 */
 	private int resPrice; /* 예약금액 */
@@ -29,12 +30,13 @@ public class Reservation implements Serializable {
 	public Reservation() {
 	}
 
-	public Reservation(int resNum, String resDate, int resPeople, String resTime, Date resPaidTime, String resPayStatement,
+	public Reservation(int resNum, String resDate, int resPeople, String resStartTime, String resEndTime, Date resPaidTime, String resPayStatement,
 			int resPrice, String memberId, String businessId) {
 		this.resNum = resNum;
 		this.resDate = resDate;
 		this.resPeople = resPeople;
-		this.resTime = resTime;
+		this.resStartTime = resStartTime;
+		this.resEndTime = resEndTime;
 		this.resPaidTime = resPaidTime;
 		this.resPayStatement = resPayStatement;
 		this.resPrice = resPrice;
@@ -66,12 +68,20 @@ public class Reservation implements Serializable {
 		this.resPeople = resPeople;
 	}
 
-	public String getResTime() {
-		return resTime;
+	public String getResStartTime() {
+		return resStartTime;
 	}
 
-	public void setResTime(String resTime) {
-		this.resTime = resTime;
+	public void setResStartTime(String resStartTime) {
+		this.resStartTime = resStartTime;
+	}
+
+	public String getResEndTime() {
+		return resEndTime;
+	}
+
+	public void setResEndTime(String resEndTime) {
+		this.resEndTime = resEndTime;
 	}
 
 	public Date getResPaidTime() {
@@ -116,9 +126,10 @@ public class Reservation implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Reservation [resNum=" + resNum + ", resDate=" + resDate + ", resPeople=" + resPeople + ", resTime="
-				+ resTime + ", resPaidTime=" + resPaidTime + ", resPayStatement=" + resPayStatement + ", resPrice="
-				+ resPrice + ", memberId=" + memberId + ", businessId=" + businessId + ", member=" + member + "]";
+		return "Reservation [resNum=" + resNum + ", resDate=" + resDate + ", resPeople=" + resPeople + ", resStartTime="
+				+ resStartTime + ", resEndTime=" + resEndTime + ", resPaidTime=" + resPaidTime + ", resPayStatement="
+				+ resPayStatement + ", resPrice=" + resPrice + ", memberId=" + memberId + ", businessId=" + businessId
+				+ ", member=" + member + "]";
 	}
 
 	@Override
@@ -129,12 +140,13 @@ public class Reservation implements Serializable {
 		result = prime * result + ((member == null) ? 0 : member.hashCode());
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
 		result = prime * result + ((resDate == null) ? 0 : resDate.hashCode());
+		result = prime * result + ((resEndTime == null) ? 0 : resEndTime.hashCode());
 		result = prime * result + resNum;
 		result = prime * result + ((resPaidTime == null) ? 0 : resPaidTime.hashCode());
 		result = prime * result + ((resPayStatement == null) ? 0 : resPayStatement.hashCode());
 		result = prime * result + resPeople;
 		result = prime * result + resPrice;
-		result = prime * result + ((resTime == null) ? 0 : resTime.hashCode());
+		result = prime * result + ((resStartTime == null) ? 0 : resStartTime.hashCode());
 		return result;
 	}
 
@@ -167,6 +179,11 @@ public class Reservation implements Serializable {
 				return false;
 		} else if (!resDate.equals(other.resDate))
 			return false;
+		if (resEndTime == null) {
+			if (other.resEndTime != null)
+				return false;
+		} else if (!resEndTime.equals(other.resEndTime))
+			return false;
 		if (resNum != other.resNum)
 			return false;
 		if (resPaidTime == null) {
@@ -183,14 +200,12 @@ public class Reservation implements Serializable {
 			return false;
 		if (resPrice != other.resPrice)
 			return false;
-		if (resTime == null) {
-			if (other.resTime != null)
+		if (resStartTime == null) {
+			if (other.resStartTime != null)
 				return false;
-		} else if (!resTime.equals(other.resTime))
+		} else if (!resStartTime.equals(other.resStartTime))
 			return false;
 		return true;
 	}
-
-	
 
 }

@@ -34,4 +34,12 @@ public interface ReservationDAO {
 	 * @return
 	 */
 	List<Reservation> selectReservationByMemberId(String memberId);
+	
+	/**
+	 * 점주ID 로 예약조회 (특정 음식점에 대한 예약내역만 조회)
+	 * @param businessId
+	 * @return
+	 */
+	List<Reservation> selectReservationByBusinessId(String businessId);
+	
 }

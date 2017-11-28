@@ -14,9 +14,9 @@ public class OwnerMemberTest {
       ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
       
       OwnerMemberService service = (OwnerMemberService)ctx.getBean("ownerMemberServiceImpl");
-      Restaurant rt = new Restaurant("id-1", 1111, "꼬미네", "031-111-111", "치킨집", "WED", new Date(20170511), new Date(20170311), 
-    		  "ggomi.jpg", "ggomi2.jpg", "경기도 수원시", 100, 50000);
-      System.out.println(rt);
+//      Restaurant rt = new Restaurant("id-1", 1111, "꼬미네", "031-111-111", "치킨집", "WED", new Date(20170511), new Date(20170311), 
+//    		  "ggomi.jpg", "ggomi2.jpg", "경기도 수원시", 100, 50000);
+//      System.out.println(rt);
 
       
       /*int i = service.insertRestaurant(rt);

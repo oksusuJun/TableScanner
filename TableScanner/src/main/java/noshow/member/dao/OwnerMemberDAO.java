@@ -1,7 +1,5 @@
 package noshow.member.dao;
 
-import java.util.List;
-
 import noshow.vo.Restaurant;
 
 public interface OwnerMemberDAO {
@@ -16,7 +14,7 @@ public interface OwnerMemberDAO {
       int deleteRestaurant(String businessId);
 
       //Restaurant 조회
-      List<Restaurant> selectRestaurantByBusinessId(String businessId);
+      Restaurant selectRestaurantByBusinessId(String businessId);
 
       
 }

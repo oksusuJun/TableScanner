@@ -12,19 +12,21 @@ public class Restaurant implements Serializable{
 	private String rtHoliday; /* 휴무일 */
 	private Date rtOpen; /* 오픈시간 */
 	private Date rtClose; /* close 시간 */
+	private int rtTerm;  /* 테이블 이용시간 */
 	private String rtImg; /* 음식점 사진 이름*/
 	private String rtSaveImg; /* 저장 이름 */
 	private String rtAddress; /* 음식점 위치*/
 	private int rtCapacity; /* 수용가능인원 */
 	private int rtDeposit; /* 1인 금액 */
 	
-	private Member business; /* 점주 회원 아이디 */
+	private Member member; /* 점주 회원 아이디 */
+	private Table table;
 	
 	public Restaurant() {}
 
 	public Restaurant(String businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
-			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
-			int rtDeposit) {
+			Date rtOpen, Date rtClose, int rtTerm, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
+			int rtDeposit, Member member, Table table) {
 		this.businessId = businessId;
 		this.rtNum = rtNum;
 		this.rtName = rtName;
@@ -33,11 +35,14 @@ public class Restaurant implements Serializable{
 		this.rtHoliday = rtHoliday;
 		this.rtOpen = rtOpen;
 		this.rtClose = rtClose;
+		this.rtTerm = rtTerm;
 		this.rtImg = rtImg;
 		this.rtSaveImg = rtSaveImg;
 		this.rtAddress = rtAddress;
 		this.rtCapacity = rtCapacity;
 		this.rtDeposit = rtDeposit;
+		this.member = member;
+		this.table = table;
 	}
 
 	public String getBusinessId() {
@@ -104,6 +109,14 @@ public class Restaurant implements Serializable{
 		this.rtClose = rtClose;
 	}
 
+	public int getRtTerm() {
+		return rtTerm;
+	}
+
+	public void setRtTerm(int rtTerm) {
+		this.rtTerm = rtTerm;
+	}
+
 	public String getRtImg() {
 		return rtImg;
 	}
@@ -144,28 +157,37 @@ public class Restaurant implements Serializable{
 		this.rtDeposit = rtDeposit;
 	}
 
-	public Member getBusiness() {
-		return business;
+	public Member getMember() {
+		return member;
 	}
 
-	public void setBusiness(Member business) {
-		this.business = business;
+	public void setMember(Member member) {
+		this.member = member;
+	}
+
+	public Table getTable() {
+		return table;
+	}
+
+	public void setTable(Table table) {
+		this.table = table;
 	}
 
 	@Override
 	public String toString() {
 		return "Restaurant [businessId=" + businessId + ", rtNum=" + rtNum + ", rtName=" + rtName + ", rtTel=" + rtTel
 				+ ", rtField=" + rtField + ", rtHoliday=" + rtHoliday + ", rtOpen=" + rtOpen + ", rtClose=" + rtClose
-				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtCapacity="
-				+ rtCapacity + ", rtDeposit=" + rtDeposit + ", business=" + business + "]";
+				+ ", rtTerm=" + rtTerm + ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress
+				+ ", rtCapacity=" + rtCapacity + ", rtDeposit=" + rtDeposit + ", member=" + member + ", table=" + table
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((business == null) ? 0 : business.hashCode());
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
+		result = prime * result + ((member == null) ? 0 : member.hashCode());
 		result = prime * result + ((rtAddress == null) ? 0 : rtAddress.hashCode());
 		result = prime * result + rtCapacity;
 		result = prime * result + ((rtClose == null) ? 0 : rtClose.hashCode());
@@ -178,6 +200,8 @@ public class Restaurant implements Serializable{
 		result = prime * result + ((rtOpen == null) ? 0 : rtOpen.hashCode());
 		result = prime * result + ((rtSaveImg == null) ? 0 : rtSaveImg.hashCode());
 		result = prime * result + ((rtTel == null) ? 0 : rtTel.hashCode());
+		result = prime * result + rtTerm;
+		result = prime * result + ((table == null) ? 0 : table.hashCode());
 		return result;
 	}
 
@@ -190,15 +214,15 @@ public class Restaurant implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Restaurant other = (Restaurant) obj;
-		if (business == null) {
-			if (other.business != null)
-				return false;
-		} else if (!business.equals(other.business))
-			return false;
 		if (businessId == null) {
 			if (other.businessId != null)
 				return false;
 		} else if (!businessId.equals(other.businessId))
+			return false;
+		if (member == null) {
+			if (other.member != null)
+				return false;
+		} else if (!member.equals(other.member))
 			return false;
 		if (rtAddress == null) {
 			if (other.rtAddress != null)
@@ -251,9 +275,14 @@ public class Restaurant implements Serializable{
 				return false;
 		} else if (!rtTel.equals(other.rtTel))
 			return false;
+		if (rtTerm != other.rtTerm)
+			return false;
+		if (table == null) {
+			if (other.table != null)
+				return false;
+		} else if (!table.equals(other.table))
+			return false;
 		return true;
 	}
 
-	
-	
 }
