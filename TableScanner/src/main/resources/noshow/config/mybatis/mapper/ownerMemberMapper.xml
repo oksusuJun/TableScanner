@@ -108,7 +108,7 @@
    			<id column="table_seats" property="tableSeats"/>
    			<id column="x_location" property="xLocation"/>
    			<id column="y_location" property="yLocation"/>
-   		</collection>
+   		</association>
    </resultMap>
     
     

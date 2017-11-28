@@ -18,13 +18,13 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO dao;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 	
 	@Override
 	@Transactional
 	public void addMember(Member member, String role) {
-		member.setMemberPassword(passwordEncoder.encode(member.getMemberPassword()));
+//		member.setMemberPassword(passwordEncoder.encode(member.getMemberPassword()));
 		dao.insertMember(member);
 		dao.insertAuthority(new Authority(member.getMemberId(), role));
 		if(role.equals("ROLE_ADMIN")) {
@@ -39,7 +39,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void updateUserProfile(Member member) {
-		member.setMemberPassword(passwordEncoder.encode(member.getMemberPassword()));
+//		member.setMemberPassword(passwordEncoder.encode(member.getMemberPassword()));
 		dao.updateMemberByMemberId(member);
 		System.out.println(member);
 	}

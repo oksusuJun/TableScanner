@@ -30,7 +30,7 @@ public class OwnerMemberTest {
       /*int d = service.deleteRestaurant("id-1");
       System.out.println("식당삭제" +d);*/
       
-      List sel = service.selectRestaurantByBusinessId("id-7");
+      Restaurant sel = service.selectRestaurantByBusinessId("id-7");
       System.out.println(sel);
    }
 

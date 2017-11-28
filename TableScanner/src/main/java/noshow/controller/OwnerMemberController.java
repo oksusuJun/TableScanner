@@ -10,7 +10,6 @@ import noshow.member.service.OwnerMemberService;
 import noshow.vo.Restaurant;
 
 @Controller
-@RequestMapping("")
 public class OwnerMemberController {
 	
 	@Autowired

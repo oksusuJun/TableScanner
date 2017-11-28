@@ -1,6 +1,5 @@
 package noshow.test;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -17,21 +16,37 @@ public class ReservationTest {
 
 		ReservationService service = (ReservationService) ctx.getBean("reservationServiceImpl");
 
-		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
 		Date today = new Date();
-
-		Reservation reservation1 = new Reservation(104, "2017/12/02", 2, "2017/12/02 12:00:00", today, "카드결제", 10000, "id-12", "id-1");
-		System.out.println(reservation1);
-		int result = service.addReservation(reservation1);
-		System.out.println(result);
+		
+		int resNum = 109;
+		String resDate = "2017/12/02";
+		int resPeople = 2;
+		String resStartTime = "2017/12/02 13:00:00";
+		String resEndTime = resStartTime;
+		Date resPaidTime = new Date();
+		String resPayStatement = "카드결제";
+		int resPrice = 0;
+		String memberId = "id-9";
+		String businessId = "id-3";
+		
+		
+		Reservation reservation1 = new Reservation(106, "2017/12/02", 2, "2017/12/02 14:00:00", "2017/12/02 16:00:00", today, "카드결제", 10000, "id-13", "id-1");
+//		System.out.println(reservation1);
+//		int result = service.addReservation(resNum, resDate, resPeople, resStartTime, resEndTime, resPaidTime, resPayStatement, resPrice, memberId, businessId);
+//		System.out.println(result);
 		
 		List<Reservation> list = service.selectReservationByMemberId(reservation1.getMemberId());
+//		for(Reservation res : list) {
+//			System.out.println(res);
+//		}
+		
+		businessId = "id-3";
+		list = service.selectReservationByBusinessId(businessId);
 		for(Reservation res : list) {
 			System.out.println(res);
 		}
-		
-		int deleteResult = service.deleteReservation(103);
-		System.out.println(deleteResult);
+//		
+//		int deleteResult = service.deleteReservation(103);
+//		System.out.println(deleteResult);
 	}
 }

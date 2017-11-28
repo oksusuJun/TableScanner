@@ -24,6 +24,7 @@
 		<result column="res_end_time" property="resEndTime"/>
 		<result column="res_paid_time" property="resPaidTime"/>
 		<result column="res_pay_statement" property="resPayStatement"/>
+		<result column="res_price" property="resPrice"/>
 		<result column="member_id" property="memberId"/>
 		<result column="business_id" property="businessId"/>
 	</resultMap>
