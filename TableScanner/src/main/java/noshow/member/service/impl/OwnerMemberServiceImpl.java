@@ -1,7 +1,5 @@
 package noshow.member.service.impl;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -32,7 +30,7 @@ public class OwnerMemberServiceImpl implements OwnerMemberService{
 	}
 
 	@Override
-	public List<Restaurant> selectRestaurantByBusinessId(String businessId) {
+	public Restaurant selectRestaurantByBusinessId(String businessId) {
 		return dao.selectRestaurantByBusinessId(businessId);
 	}
 
