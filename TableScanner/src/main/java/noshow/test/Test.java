@@ -10,10 +10,14 @@ import noshow.vo.Member;
 
 public class Test {
 	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
+/*		ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
 		
 		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
 	
+		Member m2 = service.selectMemberById("id-80");
+		if(m2 == null) {
+			System.out.println(m2);
+		}
 		Member member = new Member("id-33","password33","김기기","남","0104022354",new Date(19880808),"email");
 		System.out.println(member);
 		int i2 = service.deleteMember("id-33");
@@ -25,6 +29,6 @@ public class Test {
 		System.out.println(i3); 
 		Member i4 = service.selectMemberById("id-33");
 		System.out.println(i4);
-		
+		*/
 	}
 }

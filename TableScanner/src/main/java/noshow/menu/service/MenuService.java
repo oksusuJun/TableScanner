@@ -21,4 +21,5 @@ public interface MenuService {
 	
 	List<Classification> selectClassificationBybusinessId(String businessId);
 	
+	List<Menu> selectMenuBybusinessId(String businessId);
 }

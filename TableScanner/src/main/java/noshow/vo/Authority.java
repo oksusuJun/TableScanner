@@ -3,21 +3,21 @@ package noshow.vo;
 import java.io.Serializable;
 
 public class Authority implements Serializable{
-	private Member memberId;	/* 회원 아이디 */
+	private String memberId;	/* 회원 아이디 */
 	private String authority; /* 권한 */
 	
 	public Authority() {}
-	
-	public Authority(Member memberId, String authority) {
+
+	public Authority(String memberId, String authority) {
 		this.memberId = memberId;
 		this.authority = authority;
 	}
 
-	public Member getMemberId() {
+	public String getMemberId() {
 		return memberId;
 	}
 
-	public void setMemberId(Member memberId) {
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 
@@ -64,6 +64,8 @@ public class Authority implements Serializable{
 			return false;
 		return true;
 	}
+	
+
 	
 	
 	

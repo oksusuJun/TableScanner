@@ -55,4 +55,9 @@ public class MenuDAOImpl implements MenuDAO{
 		return session.selectList(makeSqlId("selectClassificationBybusinessId"), businessId);
 	}
 
+	@Override
+	public List<Menu> selectMenuBybusinessId(String businessId) {
+		return session.selectList(makeSqlId("selectMenuBybusinessId"), businessId);
+	}
+
 }
