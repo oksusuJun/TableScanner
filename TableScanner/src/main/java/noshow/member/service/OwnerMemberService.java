@@ -3,5 +3,7 @@ package noshow.member.service;
 import noshow.vo.Restaurant;
 
 public interface OwnerMemberService {
-   int getRtByNum(Restaurant rt);
+   int insertRestaurant(Restaurant rt);
+   int updateRestaurant(Restaurant rt);
+   int deleteRestaurant(String businessId);
 }

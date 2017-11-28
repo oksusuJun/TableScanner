@@ -8,12 +8,13 @@ public interface OwnerMemberDAO {
       int insertRestaurant(Restaurant rt);
       
       //Restaurant DB수정
-      int updateRestaurantById(Restaurant rt);
+      int updateRestaurant(Restaurant rt);
       
       //Restaurant DB삭제
-      int deleteRestaurantByNum(int businessNum);
-      
+      int deleteRestaurant(String businessId);
+
       //Restaurant 조회
-      Restaurant selectMemberByNum(int businessNum);
+      Restaurant selectRestaurantById(int businessNum);
+
       
 }

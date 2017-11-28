@@ -14,10 +14,22 @@ public class OwnerMemberServiceImpl implements OwnerMemberService{
    @Resource
    private OwnerMemberDAO dao;
 
-   @Override
-   public int getRtByNum(Restaurant rt) {
-      return dao.insertRestaurant(rt);
-   }
+	@Override
+	public int insertRestaurant(Restaurant rt) {
+		return dao.insertRestaurant(rt);
+	}
+	
+	@Override
+	public int updateRestaurant(Restaurant rt) {
+		return dao.updateRestaurant(rt);
+	}
+	
+	@Override
+	public int deleteRestaurant(String businessId) {
+		return dao.deleteRestaurant(businessId);
+	}
+
+   
    
    
 }

@@ -22,22 +22,20 @@ public class OwnerMemberDAOImpl implements OwnerMemberDAO{
       return session.insert(makeSqlId("insertRestaurant"), rt);
    }
 
-   @Override
-   public int updateRestaurantById(Restaurant rt) {
-      // TODO Auto-generated method stub
-      return 0;
-   }
+	   @Override
+	public int updateRestaurant(Restaurant rt) {
+		return session.update(makeSqlId("updateRestaurant"), rt);
+	}
+	
+	@Override
+	public int deleteRestaurant(String businessId) {
+		return session.delete(makeSqlId("deleteRestaurant"), businessId);
+	}
+	
+	@Override
+	public Restaurant selectRestaurantById(int businessNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-   @Override
-   public int deleteRestaurantByNum(int businessNum) {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-   @Override
-   public Restaurant selectMemberByNum(int businessNum) {
-      // TODO Auto-generated method stub
-      return null;
-   }
-   
 }

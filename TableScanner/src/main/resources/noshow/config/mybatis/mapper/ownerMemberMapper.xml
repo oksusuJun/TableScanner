@@ -37,13 +37,12 @@
    </resultMap>
     -->
    <!-- sql문 -->
-   <insert id="insertRestaurant" parameterType="restaurant">
+   <insert id="insertRestaurant" parameterType="noshow.vo.Restaurant">
       INSERT INTO restaurant(business_id, rt_num, rt_name, rt_tel, rt_field, rt_holiday, rt_open, rt_close, rt_img, rt_save_img, rt_address, rt_capacity, rt_deposit)
-      VALUES (#{businessId}, #{rtNum} , #{rtName} , #{rtTel} , #{rtField}, #{rtHoliday} , #{rtOpen}
-            #{rtClose}, #{rtImg}, #{rtSaveImg} #{rtAddress}, #{rtCapacity}, #{rtDeposit})
+      VALUES (#{businessId}, #{rtNum} , #{rtName} , #{rtTel} , #{rtField}, #{rtHoliday} , #{rtOpen}, #{rtClose}, #{rtImg}, #{rtSaveImg}, #{rtAddress}, #{rtCapacity}, #{rtDeposit})
    </insert>
    
-<!--    <update id="updateRtById" parameterType="restaurant">
+	<update id="updateRestaurant" parameterType="noshow.vo.Restaurant">
       UPDATE   restaurant
       SET      business_id=#{businessId},
             rt_num=#{rtNum},
@@ -54,15 +53,15 @@
             rt_open=#{rtOpen},
             rt_close=#{rtClose},
             rt_img=#{rtImg},
-            rt_save_img=#{rtSaveImg}
+            rt_save_img=#{rtSaveImg},
             rt_address=#{rtAddress},
             rt_capacity=#{rtCapacity},
             rt_deposit=#{rtDeposit}
-      WHERE   business_id = #{businessId}
+     WHERE   business_id = #{businessId}
    </update>
    
-   <delete id="deleteRtById" parameterType="string">
+   <delete id="deleteRestaurant" parameterType="string">
       DELETE FROM restaurant WHERE business_id=#{businessId}
-   </delete> -->
+   </delete>
    
 </mapper>

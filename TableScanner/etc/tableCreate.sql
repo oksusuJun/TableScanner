@@ -384,3 +384,4 @@ ALTER TABLE ANSWER
       REFERENCES QUESTION (
          QUESTION_NUM
       );
+      

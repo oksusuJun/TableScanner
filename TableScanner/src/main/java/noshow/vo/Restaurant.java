@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Restaurant implements Serializable{
-	private Member businessId; /* 점주 회원 아이디 */
+	private String businessId;
 	private int rtNum; /* 사업자 번호 */
 	private String rtName; /* 음식점 명 */
 	private String rtTel; /* 음식점 전화번호 */
@@ -18,9 +18,11 @@ public class Restaurant implements Serializable{
 	private int rtCapacity; /* 수용가능인원 */
 	private int rtDeposit; /* 1인 금액 */
 	
+	private Member business; /* 점주 회원 아이디 */
+	
 	public Restaurant() {}
 
-	public Restaurant(Member businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
+	public Restaurant(String businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
 			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
 			int rtDeposit) {
 		this.businessId = businessId;
@@ -38,11 +40,11 @@ public class Restaurant implements Serializable{
 		this.rtDeposit = rtDeposit;
 	}
 
-	public Member getBusinessId() {
+	public String getBusinessId() {
 		return businessId;
 	}
 
-	public void setBusinessId(Member businessId) {
+	public void setBusinessId(String businessId) {
 		this.businessId = businessId;
 	}
 
@@ -142,18 +144,27 @@ public class Restaurant implements Serializable{
 		this.rtDeposit = rtDeposit;
 	}
 
+	public Member getBusiness() {
+		return business;
+	}
+
+	public void setBusiness(Member business) {
+		this.business = business;
+	}
+
 	@Override
 	public String toString() {
 		return "Restaurant [businessId=" + businessId + ", rtNum=" + rtNum + ", rtName=" + rtName + ", rtTel=" + rtTel
 				+ ", rtField=" + rtField + ", rtHoliday=" + rtHoliday + ", rtOpen=" + rtOpen + ", rtClose=" + rtClose
 				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtCapacity="
-				+ rtCapacity + ", rtDeposit=" + rtDeposit + "]";
+				+ rtCapacity + ", rtDeposit=" + rtDeposit + ", business=" + business + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((business == null) ? 0 : business.hashCode());
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
 		result = prime * result + ((rtAddress == null) ? 0 : rtAddress.hashCode());
 		result = prime * result + rtCapacity;
@@ -179,6 +190,11 @@ public class Restaurant implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Restaurant other = (Restaurant) obj;
+		if (business == null) {
+			if (other.business != null)
+				return false;
+		} else if (!business.equals(other.business))
+			return false;
 		if (businessId == null) {
 			if (other.businessId != null)
 				return false;
@@ -238,7 +254,6 @@ public class Restaurant implements Serializable{
 		return true;
 	}
 
-	
 	
 	
 }
