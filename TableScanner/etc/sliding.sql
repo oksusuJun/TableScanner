@@ -17,7 +17,7 @@ insert into MEMBER values('id-14','id-14','이효주','여','01047090219', '94-0
 insert into MEMBER values('id-15','id-15','장길웅','남','01092905264', '98-01-01', 'dkssud12@gmail.com');
 
 select * 
-from MEnu, RESTAURANT, member;
+from MEnu;
 
 -- 음식점 정보
 insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 50, 5000);

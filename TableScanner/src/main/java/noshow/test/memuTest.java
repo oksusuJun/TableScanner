@@ -27,9 +27,16 @@ public class memuTest {
 		int y = service.deleteClassification(21);
 		System.out.println("삭제 완료" + y);*/
 		
-		Menu menu = new Menu(100, "menuName", "2", 5, "menuPicture", 3, "id-3");
+		Menu menu = new Menu(102, "menuName", "2", 5, "menuPicture", 3, "id-3");
 		System.out.println(menu);
 		int yw = service.insertMenu(menu);
 		System.out.println("메뉴 추가" + yw);
+		
+		int menu2 = service.updateMenu(new Menu(102, "jisoo", "2", 5, "menuPicture", 3, "id-3"));
+		System.out.println("메뉴 업데이트" + menu2);
+		
+		int menu3 = service.deleteMenu(100);
+		System.out.println(menu3);
 	}
+	
 }

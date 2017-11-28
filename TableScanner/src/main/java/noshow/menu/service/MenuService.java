@@ -12,4 +12,9 @@ public interface MenuService {
 	int deleteClassification(int classificationNum);
 	
 	int insertMenu(Menu menu);
+	
+	int updateMenu(Menu menu);
+	
+	int deleteMenu(int menuNum);
+	
 }

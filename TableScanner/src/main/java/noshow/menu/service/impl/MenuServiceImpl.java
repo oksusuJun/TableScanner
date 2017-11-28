@@ -36,4 +36,14 @@ public class MenuServiceImpl implements MenuService{
 		return dao.insertMenu(menu);
 	}
 
+	@Override
+	public int updateMenu(Menu menu) {
+		return dao.updateMenu(menu);
+	}
+
+	@Override
+	public int deleteMenu(int menuNum) {
+		return dao.deleteMenu(menuNum);
+	}
+
 }

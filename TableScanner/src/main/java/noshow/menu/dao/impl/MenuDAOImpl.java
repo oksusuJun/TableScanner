@@ -38,4 +38,14 @@ public class MenuDAOImpl implements MenuDAO{
 		return session.insert(makeSqlId("insertMenu"), menu);
 	}
 
+	@Override
+	public int updateMenu(Menu menu) {
+		return session.update(makeSqlId("updateMenu"), menu);
+	}
+
+	@Override
+	public int deleteMenu(int menuNum) {
+		return session.delete(makeSqlId("deleteMenu"), menuNum);
+	}
+
 }

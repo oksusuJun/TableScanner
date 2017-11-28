@@ -28,4 +28,20 @@
 	values(#{menuNum}, #{menuName}, #{menuComment}, #{menuPrice}, #{menuPicture}, #{classificationNum}, #{businessId})
 </insert>
 
+<!--  메뉴 수정 -->
+<update id="updateMenu" parameterType="Menu">
+	update menu
+	set menu_name = #{menuName}, 
+		menu_comment = #{menuComment}, 
+		menu_price = #{menuPrice}, 
+		menu_picture = #{menuPicture}, 
+		classification_num = #{classificationNum}, 
+		business_id = #{businessId}
+	where menu_num = #{menuNum}
+</update>
+
+<delete id="deleteMenu" parameterType="int">
+	delete from Menu
+	where menu_num = #{menuNum}
+</delete>
 </mapper>

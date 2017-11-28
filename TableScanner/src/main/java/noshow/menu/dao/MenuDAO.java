@@ -29,7 +29,24 @@ public interface MenuDAO {
 	
 	// 여기서 부터 menu 관련
 	
+	/**
+	 * 메뉴 추가하기
+	 * @param menu
+	 * @return
+	 */
 	int insertMenu(Menu menu);
 	
+	/**
+	 * 메뉴 업데이트
+	 * @param menu
+	 * @return
+	 */
+	int updateMenu(Menu menu);																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 	
+	/**
+	 * 메뉴 삭제
+	 * @param menu
+	 * @return
+	 */
+	int deleteMenu(int MenuNum);
 }
