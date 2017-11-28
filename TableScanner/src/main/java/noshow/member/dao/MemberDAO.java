@@ -13,9 +13,9 @@ public interface MemberDAO {
 	int updateMemberById(Member member);
 	
 	//member DB삭제
-	int deleteMemberById(String email);
+	int deleteMemberById(String id);
 	
 	//member ID으로 조회
-	Member selectMemberById(String email);
+	Member selectMemberById(String id);
 	
 }

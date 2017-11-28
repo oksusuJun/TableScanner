@@ -24,21 +24,18 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	
 	@Override
-	public int updateMemberById( Member member) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int updateMemberById(Member member) {
+		return session.update(makeSqlId("updateMemberById"), member);
 	}
 	
 	@Override
-	public int deleteMemberById(String email) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteMemberById(String id) {
+		return session.delete(makeSqlId("deleteMemberById"), id);
 	}
 	
 	@Override
-	public Member selectMemberById(String email) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member selectMemberById(String id) {
+		return session.selectOne(makeSqlId("selectMemberById"), id);
 	}
 	
 }

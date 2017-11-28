@@ -15,11 +15,6 @@ public class Member implements Serializable{
 	// 생성자
 	public Member() {}
 
-	public Member(String memberId, String memberPassword) {
-		this.memberId = memberId;
-		this.memberPassword = memberPassword;
-	}
-
 	public Member(String memberId, String memberPassword, String memberName, String memberGender, String memberTel,
 			Date memberBirthday, String memberEmail) {
 		this.memberId = memberId;

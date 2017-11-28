@@ -1,20 +1,22 @@
 -- 회원 테이블 
-insert into MEMBER values('id-1','id-1','김호규','남','01029884403', '92', 'hgkimer@naver.com');
+insert into MEMBER values('id-1','id-1','김호규','남','01029884403', '92-01-01', 'hgkimer@naver.com');
 insert into AUTHORITY(member_id) values('id-1');
-insert into MEMBER values('id-2','id-2','김호현','남','01092931027', '92', 'dada5412@naver.com');
-insert into MEMBER values('id-3','id-3','박현준','남','01052443828', '92', 'phj6207@naver.com');
-insert into MEMBER values('id-4','id-4','손경심','여','01057063525', '93', 'rudtla9776@naver.com');
-insert into MEMBER values('id-5','id-5','엄태경','남','01033016559', '94', 'um006500@gmail.com');
-insert into MEMBER values('id-6','id-6','윤규석','남','01063074802', '99', 'dbsrb0322@naver.com');
-insert into MEMBER values('id-7','id-7','윤동웅','남','01063311317', '93', 'qwe7662@naver.com');
-insert into MEMBER values('id-8','id-8','윤한울','여','01054038477', '93', 'yhu819@naver.com');
-insert into MEMBER values('id-9','id-9','이동엽','남','01048414696', '99', 'hjyj4841@gmail.com');
-insert into MEMBER values('id-10','id-10','이수일','남','01075113768', '91', 'suil2010@naver.com');
-insert into MEMBER values('id-11','id-11','이수정','여','01074303538', '90', 'soolee9017@gmail.com');
-insert into MEMBER values('id-12','id-12','이유리','여','01084303538', '94', 'dkssud122@naver.com');
-insert into MEMBER values('id-13','id-13','이지수','여','01063561375', '94', 'dkssud123@naver.com');
-insert into MEMBER values('id-14','id-14','이효주','여','01047090219', '94', 'djasl346@naver.com');
-insert into MEMBER values('id-15','id-15','장길웅','남','01092905264', '98', 'dkssud12@gmail.com');
+insert into MEMBER values('id-2','id-2','김호현','남','01092931027', '1992-01-01', 'dada5412@naver.com');
+insert into MEMBER values('id-3','id-3','박현준','남','01052443828', '92-01-01', 'phj6207@naver.com');
+insert into MEMBER values('id-4','id-4','손경심','여','01057063525', '93-01-01', 'rudtla9776@naver.com');
+insert into MEMBER values('id-5','id-5','엄태경','남','01033016559', '94-01-01', 'um006500@gmail.com');
+insert into MEMBER values('id-6','id-6','윤규석','남','01063074802', '99-01-01', 'dbsrb0322@naver.com');
+insert into MEMBER values('id-7','id-7','윤동웅','남','01063311317', '93-01-01', 'qwe7662@naver.com');
+insert into MEMBER values('id-8','id-8','윤한울','여','01054038477', '93-01-01', 'yhu819@naver.com');
+insert into MEMBER values('id-9','id-9','이동엽','남','01048414696', '99-01-01', 'hjyj4841@gmail.com');
+insert into MEMBER values('id-10','id-10','이수일','남','01075113768', '91-01-01', 'suil2010@naver.com');
+insert into MEMBER values('id-11','id-11','이수정','여','01074303538', '90-01-01', 'soolee9017@gmail.com');
+insert into MEMBER values('id-12','id-12','이유리','여','01084303538', '94-01-01', 'dkssud122@naver.com');
+insert into MEMBER values('id-13','id-13','이지수','여','01063561375', '94-01-01', 'dkssud123@naver.com');
+insert into MEMBER values('id-14','id-14','이효주','여','01047090219', '94-01-01', 'djasl346@naver.com');
+insert into MEMBER values('id-15','id-15','장길웅','남','01092905264', '98-01-01', 'dkssud12@gmail.com');
+
+select * from MEMBER
 
 -- 음식점 정보
 insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 123,231,20,5000);
