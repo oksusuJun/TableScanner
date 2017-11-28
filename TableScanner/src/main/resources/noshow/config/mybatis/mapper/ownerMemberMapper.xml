@@ -13,7 +13,7 @@
          rt_holiday,
          to_date(rt_open, 'YY/MM/dd hh24:mi:ss'),
          to_date(rt_close, 'YY/MM/dd hh24:mi:ss'),
-         to_date(rt_term, 'YY/MM/dd hh24:mi:ss'),
+         rt_term,
          rt_img,
          rt_save_img,
          rt_address,
@@ -102,17 +102,14 @@
  	
    <!-- resultMap : Restaurant테이블 & Table_테이블 join select -->
    <resultMap type="restaurant" id="table-join-restaurant-resultmap" extends="restaurant-resultmap">
-   		<collection property="table" javaType="table">
-   			<id column="table_seq" property="tableSeq"/>
+   		<association property="table" javaType="table">
+   			<id column="table_seq" property="tableSeq"/> 
    			<id column="table_num" property="tableNum"/>
    			<id column="table_seats" property="tableSeats"/>
    			<id column="x_location" property="xLocation"/>
    			<id column="y_location" property="yLocation"/>
    		</collection>
    </resultMap>
-    
-    
-    
     
     
    <!-- sql문 -->
