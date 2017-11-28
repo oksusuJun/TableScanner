@@ -6,7 +6,8 @@
 		SELECT	res_num,
 				res_date,
 				res_people,
-				res_time,
+				res_start_time,
+				res_end_time,
 				res_paid_time,
 				res_pay_statement,
 				res_price,
@@ -19,7 +20,8 @@
 		<id column="res_num" property="resNum"/>
 		<result column="res_date" property="resDate"/>
 		<result column="res_people" property="resPeople"/>
-		<result column="res_time" property="resTime"/>
+		<result column="res_start_time" property="resStartTime"/>
+		<result column="res_end_time" property="resEndTime"/>
 		<result column="res_paid_time" property="resPaidTime"/>
 		<result column="res_pay_statement" property="resPayStatement"/>
 		<result column="member_id" property="memberId"/>
@@ -32,7 +34,8 @@
 		(	#{resNum},
 			to_date(#{resDate}, 'yyyy/mm/dd'),
 			#{resPeople},
-			to_date(#{resTime}, 'yyyy/mm/dd hh24:mi:ss'),
+			to_date(#{resStartTime}, 'yyyy/mm/dd hh24:mi:ss'),
+			to_date(#{resEndTime}, 'yyyy/mm/dd hh24:mi:ss'),
 			SYSDATE,
 			#{resPayStatement},
 			#{resPrice},
@@ -61,9 +64,16 @@
 	</delete>
 	
 	<!-- SELECT -->
+	<!-- ##### 회원 ID 로 예약 조회 ##### -->
 	<select id="selectReservationByMemberId" parameterType="string" resultMap="reservation-resultmap">
 		<include refid="select-reservation"/>
 		WHERE	member_id = #{value}
+	</select>
+	
+	<!-- ##### 점주 ID 로 예약 조회 ##### -->
+	<select id="selectReservationByBusinessId" parameterType="string" resultMap="reservation-resultmap">
+		<include refid="select-reservation"/>
+		WHERE	business_id = #{value}
 	</select>
 	
 </mapper>
