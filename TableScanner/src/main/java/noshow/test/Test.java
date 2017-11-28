@@ -14,6 +14,10 @@ public class Test {
 		
 		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
 	
+		Member m2 = service.selectMemberById("id-80");
+		if(m2 == null) {
+			System.out.println(m2);
+		}
 		Member member = new Member("id-33","password33","김기기","남","0104022354",new Date(19880808),"email");
 		System.out.println(member);
 		int i2 = service.deleteMember("id-33");
