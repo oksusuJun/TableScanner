@@ -1,5 +1,7 @@
 package noshow.menu.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +46,11 @@ public class MenuServiceImpl implements MenuService{
 	@Override
 	public int deleteMenu(int menuNum) {
 		return dao.deleteMenu(menuNum);
+	}
+
+	@Override
+	public List<Classification> selectClassificationBybusinessId(String businessId) {
+		return dao.selectClassificationBybusinessId(businessId);
 	}
 
 }

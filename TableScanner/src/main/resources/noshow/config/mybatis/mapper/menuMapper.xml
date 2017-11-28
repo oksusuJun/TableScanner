@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="noshow.config.mybatis.mapper.menuMapper">
 
+	<resultMap type="Classification" id="Classification-resultmap">
+		<id column="classification_num" property="classificationNum"/>
+		<result column="business_id" property="businessId"/>
+		<result column="classification_name" property="classificationName"/>
+	</resultMap>
+	
 <!-- insertClassification -->
 <insert id="insertClassification" parameterType="noshow.vo.Classification">
 	insert into classification(classification_num, business_id, classification_name)
@@ -21,6 +27,13 @@
 	delete from Classification 
 	where Classification_num = #{classificationName}
 </delete>
+
+
+<select id="selectClassificationBybusinessId" resultMap="Classification-resultmap">
+	select *
+	from classification
+	where business_id = #{value}
+</select>
 
 <!-- 메뉴등록 -->
 <insert id="insertMenu" parameterType="Menu">

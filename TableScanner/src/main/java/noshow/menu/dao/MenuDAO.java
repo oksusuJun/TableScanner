@@ -1,5 +1,7 @@
 package noshow.menu.dao;
 
+import java.util.List;
+
 import noshow.vo.Classification;
 import noshow.vo.Menu;
 
@@ -26,6 +28,12 @@ public interface MenuDAO {
 	 */
 	int deleteClassification(int classificationNum);
 	
+	/**
+	 * business id로 가지고 있는 대분류 조회
+	 * @param businessId
+	 * @return
+	 */
+	List<Classification> selectClassificationBybusinessId(String businessId);
 	
 	// 여기서 부터 menu 관련
 	

@@ -1,5 +1,7 @@
 package noshow.menu.service;
 
+import java.util.List;
+
 import noshow.vo.Classification;
 import noshow.vo.Menu;
 
@@ -16,5 +18,7 @@ public interface MenuService {
 	int updateMenu(Menu menu);
 	
 	int deleteMenu(int menuNum);
+	
+	List<Classification> selectClassificationBybusinessId(String businessId);
 	
 }
