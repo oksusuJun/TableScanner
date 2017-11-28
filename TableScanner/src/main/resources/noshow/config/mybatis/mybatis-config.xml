@@ -11,6 +11,7 @@
 
 	<!-- mapper 등록 -->
 	<mappers>
+		<mapper resource="noshow/config/mybatis/mapper/menuMapper.xml"/>
 		<mapper resource="noshow/config/mybatis/mapper/boardMapper.xml"/>
 		<mapper resource="noshow/config/mybatis/mapper/memberMapper.xml"/>
 		<mapper resource="noshow/config/mybatis/mapper/reservationMapper.xml"/>

@@ -14,11 +14,17 @@ public class Test {
 		
 		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
 		
+<<<<<<< HEAD
 		Member member = new Member("id-33","password33","김기기","남","0104022354",new Date(19880808),"email");
 		System.out.println(member);
 		int i2 = service.deleteMember("id-33");
 		System.out.println(i2);
 		int i = service.addMember(member);
+=======
+		Member member2 = new Member("id2-2","password");
+		int i = service.getUserByUserId(member2);
+		
+>>>>>>> branch 'master' of https://github.com/oksusuJun/TableScanner.git
 		System.out.println(i);
 		Member member2 = new Member("id-33","password44","김나나","여","01033333333",new Date(19880101),"email@com");
 		int i3 = service.updateMember(member2);

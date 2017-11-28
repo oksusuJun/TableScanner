@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noshow.config.mybatis.mapper.menuMapper">
+
+<!-- insertClassification -->
+<insert id="insertClassification" parameterType="noshow.vo.Classification">
+	insert into classification(classification_num, bussiness_id, classification_name)
+	values(#{classificationNum}, #{businessId}, #{classificationName})
+</insert>
+
+<!-- updateClassificationNum -->
+<update id="updateClassification" parameterType="noshow.vo.Classification">
+	update classification
+	set bussiness_id = #{classificationNum},
+		classification_name = #{businessId}
+	where classification_num = #{classificationName}
+</update>
+
+<delete id="deleteClassification" parameterType="int">
+	delete from Classification 
+	where Classification_num = #{classificationName}
+</delete>
+
+
+	
+</mapper>
