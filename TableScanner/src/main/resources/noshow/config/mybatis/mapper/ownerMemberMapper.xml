@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="noshow.config.mybatis.mapper.ownerMemberMapper">
-
-<!--    <sql=id="select-restaurant">
+<!-- 
+   <sql id="select-restaurant">
    SELECT   business_id,
          rt_num,
          rt_name,
@@ -17,10 +17,11 @@
          rt_capacity,
          rt_deposit
    FROM restaurant
-   </sql> -->
-   
-   <!-- resultMap -->
-<!--    <resultMap type="restaurant" id="restaurant-resultmap">
+   </sql>
+    -->
+  
+  <!--  resultMap -->
+   <resultMap type="restaurant" id="restaurant-resultmap">
       <id column="business_id" property="businessId"/>
       <result column="rt_num" property="rtNum"/>
       <result column="rt_name" property="rtName"/>
@@ -35,7 +36,9 @@
       <result column="rt_capacity" property="rtCapacity"/>
       <result column="rt_deposit" property="rtDeposit"/>
    </resultMap>
-    -->
+  
+    
+    
    <!-- sql문 -->
    <insert id="insertRestaurant" parameterType="noshow.vo.Restaurant">
       INSERT INTO restaurant(business_id, rt_num, rt_name, rt_tel, rt_field, rt_holiday, rt_open, rt_close, rt_img, rt_save_img, rt_address, rt_capacity, rt_deposit)
@@ -63,5 +66,11 @@
    <delete id="deleteRestaurant" parameterType="string">
       DELETE FROM restaurant WHERE business_id=#{businessId}
    </delete>
+   
+   <select id="selectRestaurantByBusinessId" resultMap="restaurant-resultmap">
+   	SELECT *
+	FROM restaurant
+	WHERE business_id = #{value}
+   </select>
    
 </mapper>
