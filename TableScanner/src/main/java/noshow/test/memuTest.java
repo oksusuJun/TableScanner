@@ -42,6 +42,9 @@ public class memuTest {
 */
 		List me = service.selectClassificationBybusinessId("id-1");
 		System.out.println(me);
+		
+		List list = service.selectMenuBybusinessId("id-3");
+		System.out.println(list);
 	}
 	
 }

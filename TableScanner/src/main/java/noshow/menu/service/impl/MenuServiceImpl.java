@@ -53,4 +53,9 @@ public class MenuServiceImpl implements MenuService{
 		return dao.selectClassificationBybusinessId(businessId);
 	}
 
+	@Override
+	public List<Menu> selectMenuBybusinessId(String businessId) {
+		return dao.selectMenuBybusinessId(businessId);
+	}
+
 }
