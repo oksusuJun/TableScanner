@@ -1,6 +1,9 @@
 package noshow.menu.dao;
 
+import java.util.List;
+
 import noshow.vo.Classification;
+import noshow.vo.Menu;
 
 public interface MenuDAO {
 	
@@ -25,10 +28,33 @@ public interface MenuDAO {
 	 */
 	int deleteClassification(int classificationNum);
 	
+	/**
+	 * business id로 가지고 있는 대분류 조회
+	 * @param businessId
+	 * @return
+	 */
+	List<Classification> selectClassificationBybusinessId(String businessId);
 	
 	// 여기서 부터 menu 관련
 	
+	/**
+	 * 메뉴 추가하기
+	 * @param menu
+	 * @return
+	 */
+	int insertMenu(Menu menu);
 	
+	/**
+	 * 메뉴 업데이트
+	 * @param menu
+	 * @return
+	 */
+	int updateMenu(Menu menu);																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 	
-	
+	/**
+	 * 메뉴 삭제
+	 * @param menu
+	 * @return
+	 */
+	int deleteMenu(int MenuNum);
 }

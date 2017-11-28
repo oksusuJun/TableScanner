@@ -205,7 +205,8 @@ header {
 	<div class="dialog_login">
 		<div class="login_form_logo">logo</div>
 		<form>
-			<input type="text" name="id" placeholder="ID를 입력해주세요."> <input type="password" name="password" placeholder="Password를 입력해주세요.">
+			<input type="text" name="id" placeholder="ID를 입력해주세요."> 
+			<input type="password" name="password" placeholder="Password를 입력해주세요.">
 			<div class="Search">
 				<a href="#" class="SearchId">아이디 찾기 </a> <a href="#" class="SearchPassword">비밀번호 찾기 </a>
 			</div>
@@ -220,14 +221,18 @@ header {
 	<!-- 회원가입 팝업창 -->
 	<div class="dialog_join">
 		<div class="join_form_logo">logo</div>
-		<form>
-			<input type="text" name="id" placeholder="ID를 입력해주세요."> <input type="password" name="password" placeholder="Password를 입력해주세요."> <input
-				type="text" name="email" placeholder="Email을 입력해주세요."
-			> <input type="text" name="birthday" placeholder="생년월일를 입력해주세요.">
+		<form method="post" action="/TableScanner/noshow/insertmember.do">
+			<input type="text" name="id" placeholder="ID를 입력해주세요."> 
+			<input type="password" name="password" placeholder="Password를 입력해주세요.">
+			<input type="text" name="name" placeholder="name를 입력해주세요.">
 			<div class="gender">
-				<label>남성</label> <input type="radio" name="gender" class="radio"> <label>여성</label> <input type="radio" name="gender" class="radio">
+				<label>남성</label> <input type="radio" name="gender" class="radio" value="male"> 
+				<label>여성</label> <input type="radio" name="gender" class="radio" value="female">
 			</div>
-			<input type="text" name="phonenum" placeholder="전화번호를 입력해주세요."> <input type="submit" class="submit">
+			<input type="text" name="birthday" placeholder="생년월일를 입력해주세요.">
+			<input type="text" name="tel" placeholder="전화번호를 입력해주세요."> 
+			<input type="text" name="email" placeholder="Email을 입력해주세요."> 
+			<input type="submit" class="submit">
 		</form>
 	</div>
 
