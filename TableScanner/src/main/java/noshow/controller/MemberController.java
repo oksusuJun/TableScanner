@@ -19,9 +19,13 @@ public class MemberController {
 	@RequestMapping("insertmember")
 	public String insertMember(@RequestParam String id, @RequestParam String password, @RequestParam String name, @RequestParam String gender,
 			@RequestParam String tel, @RequestParam Date birthday, @RequestParam String email) {
-		Member m1 = new Member(id, password, name, gender, tel, birthday, email);
-		System.out.println(m1);
-		memberService.addMember(m1);
+		memberService.addMember(new Member(id, password, name, gender, tel, birthday, email));
+		return "/main.jsp";
+	}
+	
+	@RequestMapping("deletemember")
+	public String deleteMember(@RequestParam String id) {
+		memberService.deleteMember(id);
 		return "/main.jsp";
 	}
 }

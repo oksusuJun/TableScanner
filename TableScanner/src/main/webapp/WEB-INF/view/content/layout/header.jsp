@@ -204,7 +204,7 @@ header {
 	<!-- 로그인 팝업창 -->
 	<div class="dialog_login">
 		<div class="login_form_logo">logo</div>
-		<form>
+		<form action="/TableScanner/login.do" method="post">
 			<input type="text" name="id" placeholder="ID를 입력해주세요."> 
 			<input type="password" name="password" placeholder="Password를 입력해주세요.">
 			<div class="Search">
