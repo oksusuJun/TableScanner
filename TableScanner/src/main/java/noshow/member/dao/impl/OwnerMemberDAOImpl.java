@@ -1,5 +1,7 @@
 package noshow.member.dao.impl;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,22 +24,19 @@ public class OwnerMemberDAOImpl implements OwnerMemberDAO{
       return session.insert(makeSqlId("insertRestaurant"), rt);
    }
 
-   @Override
-   public int updateRestaurantById(Restaurant rt) {
-      // TODO Auto-generated method stub
-      return 0;
-   }
+	   @Override
+	public int updateRestaurant(Restaurant rt) {
+		return session.update(makeSqlId("updateRestaurant"), rt);
+	}
+	
+	@Override
+	public int deleteRestaurant(String businessId) {
+		return session.delete(makeSqlId("deleteRestaurant"), businessId);
+	}
 
-   @Override
-   public int deleteRestaurantByNum(int businessNum) {
-      // TODO Auto-generated method stub
-      return 0;
-   }
+	@Override
+	public List<Restaurant> selectRestaurantByBusinessId(String businessId) {
+		return session.selectList(makeSqlId("selectRestaurantByBusinessId"), businessId);
+	}	
 
-   @Override
-   public Restaurant selectMemberByNum(int businessNum) {
-      // TODO Auto-generated method stub
-      return null;
-   }
-   
 }

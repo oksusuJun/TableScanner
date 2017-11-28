@@ -1,12 +1,12 @@
 package noshow.test;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import noshow.member.service.OwnerMemberService;
-import noshow.vo.Member;
 import noshow.vo.Restaurant;
 
 public class OwnerMemberTest {
@@ -14,15 +14,24 @@ public class OwnerMemberTest {
       ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
       
       OwnerMemberService service = (OwnerMemberService)ctx.getBean("ownerMemberServiceImpl");
-      
-      Restaurant rt = new Restaurant(new Member("id-2","김호현","남","01092931027", "92", new Date(950109), "dada5412@naver.com") , 11, "호규네", "0000", "호프집", "mon", 
-            new Date(20170211), new Date(20170812), "안녕", "안녕2", "신봉동", 50, 5000);
-      
+      Restaurant rt = new Restaurant("id-1", 1111, "꼬미네", "031-111-111", "치킨집", "WED", new Date(20170511), new Date(20170311), 
+    		  "ggomi.jpg", "ggomi2.jpg", "경기도 수원시", 100, 50000);
       System.out.println(rt);
+
       
-/*      int i = service.getRtByNum(rt);
-      */
-/*      System.out.println(i);*/
+      /*int i = service.insertRestaurant(rt);
+      System.out.println("식당정보 등록" +i);*/
+      
+      
+      /*int u = service.updateRestaurant(new Restaurant("id-1", 2222, "박꼬미네", "031-1222-111", "치킨집", "THU", new Date(20170511), new Date(20170311), 
+    		  "ggomi.jpg", "ggomi2.jpg", "경기도 성남시", 100, 50000));
+      System.out.println("식당정보 업데이트" +u);*/
+      
+      /*int d = service.deleteRestaurant("id-1");
+      System.out.println("식당삭제" +d);*/
+      
+      List sel = service.selectRestaurantByBusinessId("id-7");
+      System.out.println(sel);
    }
 
 }

@@ -9,8 +9,12 @@
 
 	<context:component-scan
 		base-package="noshow.member.service.impl, noshow.member.dao.impl" />
+	<!-- 메뉴 -->
 	<context:component-scan base-package="noshow.menu.service.impl"/>
-	<context:component-scan base-package="noshow.menu.dao.impl"/>		
+	<context:component-scan base-package="noshow.menu.dao.impl"/>
+	<!-- 예약 -->
+	<context:component-scan base-package="noshow.reservation.service.impl"/>
+	<context:component-scan base-package="noshow.reservation.dao.impl"/>	
 
 	<!-- mybatis 설정 -->
 	<bean name="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"
@@ -29,7 +33,7 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 		p:dataSource-ref="dataSource" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
-
+ 
 	<!-- 파일 업로드를 위한 MultipartResolver 등록 - Spring Security 적용시 name="filterMultipartResolver" 
 		로 등록 (web.xml에 springMultipartFilter 필터 등록) - Spring Security 적용하지 않는 경우 
 		name="multipartResolver" 로 등록 -->
