@@ -5,20 +5,32 @@ import java.util.Date;
 
 public class Reservation implements Serializable {
 	private int resNum; /* 예약리스트번호 */
-	private Date resDate; /* 예약날짜 */
+	private String resDate; /* 예약날짜 */
 	private int resPeople; /* 인원 */
-	private Date resTime; /* 예약원하는시간 */
+	private String resTime; /* 예약원하는시간 */
 	private Date resPaidTime; /* 예약결제완료한시간 */
 	private String resPayStatement; /* 결제유무 */
 	private int resPrice; /* 예약금액 */
-	private Member memberId; /* 회원아이디 */
-	private Restaurant businessId; /* 점주회원 아이디 */
+	private String memberId; /* 회원아이디 */
+	private String businessId; /* 점주 회원아이디 */
+//	private Member memberId; /* 회원아이디 */
+//	private Restaurant businessId; /* 점주회원 아이디 */
+
+	private Member member;
+	
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 	public Reservation() {
 	}
 
-	public Reservation(int resNum, Date resDate, int resPeople, Date resTime, Date resPaidTime, String resPayStatement,
-			int resPrice, Member memberId, Restaurant businessId) {
+	public Reservation(int resNum, String resDate, int resPeople, String resTime, Date resPaidTime, String resPayStatement,
+			int resPrice, String memberId, String businessId) {
 		this.resNum = resNum;
 		this.resDate = resDate;
 		this.resPeople = resPeople;
@@ -38,11 +50,11 @@ public class Reservation implements Serializable {
 		this.resNum = resNum;
 	}
 
-	public Date getResDate() {
+	public String getResDate() {
 		return resDate;
 	}
 
-	public void setResDate(Date resDate) {
+	public void setResDate(String resDate) {
 		this.resDate = resDate;
 	}
 
@@ -54,11 +66,11 @@ public class Reservation implements Serializable {
 		this.resPeople = resPeople;
 	}
 
-	public Date getResTime() {
+	public String getResTime() {
 		return resTime;
 	}
 
-	public void setResTime(Date resTime) {
+	public void setResTime(String resTime) {
 		this.resTime = resTime;
 	}
 
@@ -86,19 +98,19 @@ public class Reservation implements Serializable {
 		this.resPrice = resPrice;
 	}
 
-	public Member getMemberId() {
+	public String getMemberId() {
 		return memberId;
 	}
 
-	public void setMemberId(Member memberId) {
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 
-	public Restaurant getBusinessId() {
+	public String getBusinessId() {
 		return businessId;
 	}
 
-	public void setBusinessId(Restaurant businessId) {
+	public void setBusinessId(String businessId) {
 		this.businessId = businessId;
 	}
 
@@ -106,7 +118,7 @@ public class Reservation implements Serializable {
 	public String toString() {
 		return "Reservation [resNum=" + resNum + ", resDate=" + resDate + ", resPeople=" + resPeople + ", resTime="
 				+ resTime + ", resPaidTime=" + resPaidTime + ", resPayStatement=" + resPayStatement + ", resPrice="
-				+ resPrice + ", memberId=" + memberId + ", businessId=" + businessId + "]";
+				+ resPrice + ", memberId=" + memberId + ", businessId=" + businessId + ", member=" + member + "]";
 	}
 
 	@Override
@@ -114,6 +126,7 @@ public class Reservation implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
+		result = prime * result + ((member == null) ? 0 : member.hashCode());
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
 		result = prime * result + ((resDate == null) ? 0 : resDate.hashCode());
 		result = prime * result + resNum;
@@ -138,6 +151,11 @@ public class Reservation implements Serializable {
 			if (other.businessId != null)
 				return false;
 		} else if (!businessId.equals(other.businessId))
+			return false;
+		if (member == null) {
+			if (other.member != null)
+				return false;
+		} else if (!member.equals(other.member))
 			return false;
 		if (memberId == null) {
 			if (other.memberId != null)
