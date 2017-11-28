@@ -46,6 +46,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider{
 	*/
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+		System.out.println("안녕하세요");
 		//ID 체크
 		String id = authentication.getName();//사용자가 입력한 ID
 		Member member = dao.selectMemberByMemberId(id);

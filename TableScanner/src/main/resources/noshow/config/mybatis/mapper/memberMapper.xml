@@ -9,6 +9,7 @@
 	<!--  사용자 조회 기본 sql -->
 	<sql id="member-select-sql">
 		select <include refid="member-column-sql"/>
+		from member
 	</sql>
 	
 	<!-- 권한 테이블 조회 sql -->

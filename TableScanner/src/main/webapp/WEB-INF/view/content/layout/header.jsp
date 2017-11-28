@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <script>
 	$(function() {
 		$(".login").on("click", function() {
@@ -205,8 +206,9 @@ header {
 	<div class="dialog_login">
 		<div class="login_form_logo">logo</div>
 		<form action="/TableScanner/login.do" method="post">
-			<input type="text" name="id" placeholder="ID를 입력해주세요."> 
-			<input type="password" name="password" placeholder="Password를 입력해주세요.">
+		<sec:csrfInput/>
+			<input type="text" name="userId" placeholder="ID를 입력해주세요."> 
+			<input type="password" name="userPassword" placeholder="Password를 입력해주세요.">
 			<div class="Search">
 				<a href="#" class="SearchId">아이디 찾기 </a> <a href="#" class="SearchPassword">비밀번호 찾기 </a>
 			</div>
