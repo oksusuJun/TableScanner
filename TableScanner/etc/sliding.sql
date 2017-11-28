@@ -21,11 +21,11 @@ from MEnu;
 select * from RESTAURANT;
 
 -- 음식점 정보
-insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 50, 5000);
+insert into RESTAURANT values('id-1', 11, '호규네', '0000', '호프집', 'mon', to_date('10:00:00',  'hh24:mi:ss'), to_date('20:00:00', 'hh24:mi:ss'), to_date('10:00:00',  'hh24:mi:ss'), '안녕', '안녕2', '신봉동', 50, 5000);
 update AUTHORITY set AUTHORITY = '1' where member_id = 'id-1';
-insert into RESTAURANT values('id-3', 33, '현준이네네', '1111', '치킨집', 'mon', sysdate, sysdate, '현준1', '현준2', '명지대', 30, 50000);
-insert into RESTAURANT values('id-13', 1313, '지수네', '1313', '족발', 'mon', sysdate, sysdate, '지수1', '지수1', '광교', 10, 3000);
-insert into RESTAURANT values('id-7', 77, '동웅이네', '7777', '보쌈', 'mon', sysdate, sysdate, '동웅1', '동웅1', '기흥', 40, 10000);
+insert into RESTAURANT values('id-3', 33, '현준이네', '1111', '치킨집', 'mon', sysdate, sysdate,sysdate, '현준1', '현준2', '명지대', 30, 50000);
+insert into RESTAURANT values('id-13', 1313, '지수네', '1313', '족발', 'mon', sysdate, sysdate,sysdate, '지수1', '지수1', '광교', 10, 3000);
+insert into RESTAURANT values('id-7', 77, '동웅이네', '7777', '보쌈', 'mon', sysdate, sysdate,sysdate, '동웅1', '동웅1', '기흥', 40, 10000);
 
 -- 메뉴 대분류
 insert into CLASSIFICATION values(1, 'id-1', '찌개류');

@@ -44,6 +44,7 @@ CREATE TABLE RESTAURANT (
    RT_HOLIDAY VARCHAR2(10), /* 휴무일 */
    RT_OPEN DATE, /* OPEN 시간 */
    RT_CLOSE DATE, /* CLOSE시간 */
+   RT_TERM DATE, /* 테이블 이용시간 */
    RT_IMG VARCHAR2(500), /* 사진이름 */
    RT_SAVE_IMG VARCHAR2(500), /* 저장이름 */
    RT_ADDRESS VARCHAR2(300), /* 음식점위치 */

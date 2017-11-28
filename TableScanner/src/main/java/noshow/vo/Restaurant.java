@@ -12,6 +12,7 @@ public class Restaurant implements Serializable{
 	private String rtHoliday; /* 휴무일 */
 	private Date rtOpen; /* 오픈시간 */
 	private Date rtClose; /* close 시간 */
+	private Date term;  /* 테이블 이용시간 */
 	private String rtImg; /* 음식점 사진 이름*/
 	private String rtSaveImg; /* 저장 이름 */
 	private String rtAddress; /* 음식점 위치*/
@@ -23,8 +24,8 @@ public class Restaurant implements Serializable{
 	public Restaurant() {}
 
 	public Restaurant(String businessId, int rtNum, String rtName, String rtTel, String rtField, String rtHoliday,
-			Date rtOpen, Date rtClose, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
-			int rtDeposit) {
+			Date rtOpen, Date rtClose, Date term, String rtImg, String rtSaveImg, String rtAddress, int rtCapacity,
+			int rtDeposit, Member business) {
 		this.businessId = businessId;
 		this.rtNum = rtNum;
 		this.rtName = rtName;
@@ -33,11 +34,13 @@ public class Restaurant implements Serializable{
 		this.rtHoliday = rtHoliday;
 		this.rtOpen = rtOpen;
 		this.rtClose = rtClose;
+		this.term = term;
 		this.rtImg = rtImg;
 		this.rtSaveImg = rtSaveImg;
 		this.rtAddress = rtAddress;
 		this.rtCapacity = rtCapacity;
 		this.rtDeposit = rtDeposit;
+		this.business = business;
 	}
 
 	public String getBusinessId() {
@@ -104,6 +107,14 @@ public class Restaurant implements Serializable{
 		this.rtClose = rtClose;
 	}
 
+	public Date getTerm() {
+		return term;
+	}
+
+	public void setTerm(Date term) {
+		this.term = term;
+	}
+
 	public String getRtImg() {
 		return rtImg;
 	}
@@ -156,8 +167,8 @@ public class Restaurant implements Serializable{
 	public String toString() {
 		return "Restaurant [businessId=" + businessId + ", rtNum=" + rtNum + ", rtName=" + rtName + ", rtTel=" + rtTel
 				+ ", rtField=" + rtField + ", rtHoliday=" + rtHoliday + ", rtOpen=" + rtOpen + ", rtClose=" + rtClose
-				+ ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress + ", rtCapacity="
-				+ rtCapacity + ", rtDeposit=" + rtDeposit + ", business=" + business + "]";
+				+ ", term=" + term + ", rtImg=" + rtImg + ", rtSaveImg=" + rtSaveImg + ", rtAddress=" + rtAddress
+				+ ", rtCapacity=" + rtCapacity + ", rtDeposit=" + rtDeposit + ", business=" + business + "]";
 	}
 
 	@Override
@@ -178,6 +189,7 @@ public class Restaurant implements Serializable{
 		result = prime * result + ((rtOpen == null) ? 0 : rtOpen.hashCode());
 		result = prime * result + ((rtSaveImg == null) ? 0 : rtSaveImg.hashCode());
 		result = prime * result + ((rtTel == null) ? 0 : rtTel.hashCode());
+		result = prime * result + ((term == null) ? 0 : term.hashCode());
 		return result;
 	}
 
@@ -251,9 +263,13 @@ public class Restaurant implements Serializable{
 				return false;
 		} else if (!rtTel.equals(other.rtTel))
 			return false;
+		if (term == null) {
+			if (other.term != null)
+				return false;
+		} else if (!term.equals(other.term))
+			return false;
 		return true;
 	}
 
-	
 	
 }
