@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noshow.config.mybatis.mapper.ownerMemberMapper">
+<!-- 
+   <sql id="select-restaurant">
+   SELECT   business_id,
+         rt_num,
+         rt_name,
+         rt_tel,
+         rt_field,
+         rt_holiday,
+         to_date(rt_open, 'YY/MM/dd hh24:mi:ss'),
+         to_date(rt_close, 'YY/MM/dd hh24:mi:ss'),
+         rt_img,
+         rt_save_img,
+         rt_address,
+         rt_capacity,
+         rt_deposit
+   FROM restaurant
+   </sql>
+    -->
+  
+  <!--  resultMap -->
+   <resultMap type="restaurant" id="restaurant-resultmap">
+      <id column="business_id" property="businessId"/>
+      <result column="rt_num" property="rtNum"/>
+      <result column="rt_name" property="rtName"/>
+      <result column="rt_tel" property="rtTel"/>
+      <result column="rt_field" property="rtField"/>
+      <result column="rt_holiday" property="rtHoliday"/>
+      <result column="rt_open" property="rtOpen"/>
+      <result column="rt_close" property="rtClose"/>
+      <result column="rt_img" property="rtImg"/>
+      <result column="rt_save_img" property="rtSaveImg"/>
+      <result column="rt_address" property="rtAddress"/>
+      <result column="rt_capacity" property="rtCapacity"/>
+      <result column="rt_deposit" property="rtDeposit"/>
+   </resultMap>
+  
+    
+    
+   <!-- sql문 -->
+   <insert id="insertRestaurant" parameterType="noshow.vo.Restaurant">
+      INSERT INTO restaurant(business_id, rt_num, rt_name, rt_tel, rt_field, rt_holiday, rt_open, rt_close, rt_img, rt_save_img, rt_address, rt_capacity, rt_deposit)
+      VALUES (#{businessId}, #{rtNum} , #{rtName} , #{rtTel} , #{rtField}, #{rtHoliday} , #{rtOpen}, #{rtClose}, #{rtImg}, #{rtSaveImg}, #{rtAddress}, #{rtCapacity}, #{rtDeposit})
+   </insert>
+   
+	<update id="updateRestaurant" parameterType="noshow.vo.Restaurant">
+      UPDATE   restaurant
+      SET      business_id=#{businessId},
+            rt_num=#{rtNum},
+            rt_name=#{rtName},
+            rt_tel=#{rtTel},
+            rt_field=#{rtField},
+            rt_holiday=#{rtHoliday},
+            rt_open=#{rtOpen},
+            rt_close=#{rtClose},
+            rt_img=#{rtImg},
+            rt_save_img=#{rtSaveImg},
+            rt_address=#{rtAddress},
+            rt_capacity=#{rtCapacity},
+            rt_deposit=#{rtDeposit}
+     WHERE   business_id = #{businessId}
+   </update>
+   
+   <delete id="deleteRestaurant" parameterType="string">
+      DELETE FROM restaurant WHERE business_id=#{businessId}
+   </delete>
+   
+   <select id="selectRestaurantByBusinessId" resultMap="restaurant-resultmap">
+   	SELECT *
+	FROM restaurant
+	WHERE business_id = #{value}
+   </select>
+   
+</mapper>

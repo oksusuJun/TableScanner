@@ -1,5 +1,7 @@
 package noshow.test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -27,9 +29,22 @@ public class memuTest {
 		int y = service.deleteClassification(21);
 		System.out.println("삭제 완료" + y);*/
 		
-		Menu menu = new Menu(100, "menuName", "2", 5, "menuPicture", 3, "id-3");
+/*		Menu menu = new Menu(109, "menuName", "2", 5, "menuPicture", 3, "id-1");
 		System.out.println(menu);
 		int yw = service.insertMenu(menu);
-		System.out.println("메뉴 추가" + yw);
+		System.out.println("메뉴 추가" + yw);*/
+		
+/*		int menu2 = service.updateMenu(new Menu(102, "jisoo", "2", 5, "menuPicture", 3, "id-3"));
+		System.out.println("메뉴 업데이트" + menu2);
+		
+		int menu3 = service.deleteMenu(100);
+		System.out.println(menu3);
+*/
+		List me = service.selectClassificationBybusinessId("id-1");
+		System.out.println(me);
+		
+		List list = service.selectMenuBybusinessId("id-3");
+		System.out.println(list);
 	}
+	
 }

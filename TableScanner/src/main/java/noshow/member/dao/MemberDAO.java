@@ -1,19 +1,45 @@
 package noshow.member.dao;
 
+import java.util.List;
+
+import noshow.vo.Authority;
 import noshow.vo.Member;
 
 public interface MemberDAO {
 
-	//member DB저장
+	
+	/**
+	 * 사용자 등록
+	 * @param user
+	 * @return
+	 */
 	int insertMember(Member member);
 	
-	//member DB수정
-	int updateMemberById(Member member);
+	/**
+	 * 사용자의 권한 등록
+	 * @param authority
+	 * @return
+	 */
+	int insertAuthority(Authority authority);
 	
-	//member DB삭제
-	int deleteMemberById(String id);
+	/**
+	 * 인증가능 사용자 userId로 조회
+	 * @param userId
+	 * @return
+	 */
+	Member selectMemberByMemberId(String memberId);
 	
-	//member ID으로 조회
-	Member selectMemberById(String id);
+	/**
+	 * userId의 사용자의 권한들 조회
+	 * @param userId
+	 * @return
+	 */
+	List<Authority> selectAuthorityByMemberId(String memberId);
 	
+	/**
+	 * 사용자 정보 수정처리
+	 * @param user
+	 * @return
+	 */
+	int updateMemberByMemberId(Member member);
 }

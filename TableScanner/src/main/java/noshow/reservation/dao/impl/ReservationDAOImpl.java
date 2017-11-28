@@ -1,5 +1,43 @@
 package noshow.reservation.dao.impl;
 
-public class ReservationDAOImpl {
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import noshow.reservation.dao.ReservationDAO;
+import noshow.vo.Reservation;
+
+@Repository
+public class ReservationDAOImpl implements ReservationDAO{
+
+	@Autowired
+	private SqlSessionTemplate session;
+	
+	private String makeSqlId(String id) {
+		return "noshow.config.mybatis.mapper.reservationMapper." + id;
+	}
+	
+	@Override
+	public int insertReservation(Reservation reservation) {
+		System.out.println(reservation);
+		return session.insert(makeSqlId("insertReservation"), reservation);
+	}
+
+	@Override
+	public int updateReservationByResNum(Reservation reservation) {
+		return session.update(makeSqlId("updateReservationByResNum"), reservation);
+	}
+
+	@Override
+	public int deleteReservationByResNum(int resNum) {
+		return session.delete(makeSqlId("deleteReservationByResNum"), resNum);
+	}
+
+	@Override
+	public List<Reservation> selectReservationByMemberId(String memberId) {
+		return session.selectList(makeSqlId("selectReservationByMemberId"), memberId);
+	}
 	
 }

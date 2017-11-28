@@ -15,7 +15,9 @@
 	<!-- needed for ContextLoaderListener -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:noshow/config/spring/model-context.xml</param-value>
+		<param-value>classpath:noshow/config/spring/model-context.xml
+					classpath:noshow/config/spring/security-context.xml 		
+		</param-value>
 	</context-param>
 	
 

@@ -1,5 +1,7 @@
 package noshow.menu.dao.impl;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,6 +38,26 @@ public class MenuDAOImpl implements MenuDAO{
 	@Override
 	public int insertMenu(Menu menu) {
 		return session.insert(makeSqlId("insertMenu"), menu);
+	}
+
+	@Override
+	public int updateMenu(Menu menu) {
+		return session.update(makeSqlId("updateMenu"), menu);
+	}
+
+	@Override
+	public int deleteMenu(int menuNum) {
+		return session.delete(makeSqlId("deleteMenu"), menuNum);
+	}
+
+	@Override
+	public List<Classification> selectClassificationBybusinessId(String businessId) {
+		return session.selectList(makeSqlId("selectClassificationBybusinessId"), businessId);
+	}
+
+	@Override
+	public List<Menu> selectMenuBybusinessId(String businessId) {
+		return session.selectList(makeSqlId("selectMenuBybusinessId"), businessId);
 	}
 
 }

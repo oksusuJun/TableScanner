@@ -13,7 +13,7 @@ import noshow.vo.Member;
 @Controller
 @RequestMapping("/noshow/")
 public class MemberController {
-	@Autowired
+/*	@Autowired
 	private MemberService memberService;
 	
 	@RequestMapping("insertmember")
@@ -27,5 +27,5 @@ public class MemberController {
 	public String deleteMember(@RequestParam String id) {
 		memberService.deleteMember(id);
 		return "/main.jsp";
-	}
+	}*/
 }

@@ -10,7 +10,7 @@ import noshow.vo.Member;
 
 public class Test {
 	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
+/*		ApplicationContext ctx = new ClassPathXmlApplicationContext("noshow/config/spring/model-context.xml");
 		
 		MemberService service = (MemberService)ctx.getBean("memberServiceImpl");
 	
@@ -29,6 +29,6 @@ public class Test {
 		System.out.println(i3); 
 		Member i4 = service.selectMemberById("id-33");
 		System.out.println(i4);
-		
+		*/
 	}
 }
