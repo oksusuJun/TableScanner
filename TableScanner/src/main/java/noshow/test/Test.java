@@ -22,7 +22,7 @@ public class Test {
 		System.out.println(i);
 		Member member2 = new Member("id-33","password44","김나나","여","01033333333",new Date(19880101),"email@com");
 		int i3 = service.updateMember(member2);
-		System.out.println(i3);
+		System.out.println(i3); 
 		Member i4 = service.selectMemberById("id-33");
 		System.out.println(i4);
 		
