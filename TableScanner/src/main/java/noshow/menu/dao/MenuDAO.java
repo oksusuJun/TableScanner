@@ -1,6 +1,7 @@
 package noshow.menu.dao;
 
 import noshow.vo.Classification;
+import noshow.vo.Menu;
 
 public interface MenuDAO {
 	
@@ -28,7 +29,7 @@ public interface MenuDAO {
 	
 	// 여기서 부터 menu 관련
 	
-	
+	int insertMenu(Menu menu);
 	
 	
 }

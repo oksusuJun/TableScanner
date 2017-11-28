@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import noshow.menu.dao.MenuDAO;
 import noshow.menu.service.MenuService;
 import noshow.vo.Classification;
+import noshow.vo.Menu;
 
 @Service
 public class MenuServiceImpl implements MenuService{
@@ -28,6 +29,11 @@ public class MenuServiceImpl implements MenuService{
 	@Override
 	public int deleteClassification(int classificationNum) {
 		return dao.deleteClassification(classificationNum);
+	}
+
+	@Override
+	public int insertMenu(Menu menu) {
+		return dao.insertMenu(menu);
 	}
 
 }

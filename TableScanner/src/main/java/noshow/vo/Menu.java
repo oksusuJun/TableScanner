@@ -8,13 +8,16 @@ public class Menu implements Serializable{
 	private String menuComment; /* 메뉴설명 */
 	private int menuPrice; /* 메뉴가격 */
 	private String menuPicture; /* 메뉴사진이름 */
-	private Classification classificationNum; /* 대분류리스트번호 */
-	private Restaurant businessId; /* 점주회원아이디 */
+	private int classificationNum;
+	private String businessId;
+	
+	private Classification classification; /* 대분류리스트번호 */
+	private Restaurant business; /* 점주회원아이디 */
 	
 	public Menu() {}
 
 	public Menu(int menuNum, String menuName, String menuComment, int menuPrice, String menuPicture,
-			Classification classificationNum, Restaurant businessId) {
+			int classificationNum, String businessId) {
 		this.menuNum = menuNum;
 		this.menuName = menuName;
 		this.menuComment = menuComment;
@@ -64,35 +67,53 @@ public class Menu implements Serializable{
 		this.menuPicture = menuPicture;
 	}
 
-	public Classification getClassificationNum() {
+	public int getClassificationNum() {
 		return classificationNum;
 	}
 
-	public void setClassificationNum(Classification classificationNum) {
+	public void setClassificationNum(int classificationNum) {
 		this.classificationNum = classificationNum;
 	}
 
-	public Restaurant getBusinessId() {
+	public String getBusinessId() {
 		return businessId;
 	}
 
-	public void setBusinessId(Restaurant businessId) {
+	public void setBusinessId(String businessId) {
 		this.businessId = businessId;
+	}
+
+	public Classification getClassification() {
+		return classification;
+	}
+
+	public void setClassification(Classification classification) {
+		this.classification = classification;
+	}
+
+	public Restaurant getBusiness() {
+		return business;
+	}
+
+	public void setBusiness(Restaurant business) {
+		this.business = business;
 	}
 
 	@Override
 	public String toString() {
 		return "Menu [menuNum=" + menuNum + ", menuName=" + menuName + ", menuComment=" + menuComment + ", menuPrice="
 				+ menuPrice + ", menuPicture=" + menuPicture + ", classificationNum=" + classificationNum
-				+ ", businessId=" + businessId + "]";
+				+ ", businessId=" + businessId + ", classification=" + classification + ", business=" + business + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((business == null) ? 0 : business.hashCode());
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
-		result = prime * result + ((classificationNum == null) ? 0 : classificationNum.hashCode());
+		result = prime * result + ((classification == null) ? 0 : classification.hashCode());
+		result = prime * result + classificationNum;
 		result = prime * result + ((menuComment == null) ? 0 : menuComment.hashCode());
 		result = prime * result + ((menuName == null) ? 0 : menuName.hashCode());
 		result = prime * result + menuNum;
@@ -110,15 +131,22 @@ public class Menu implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Menu other = (Menu) obj;
+		if (business == null) {
+			if (other.business != null)
+				return false;
+		} else if (!business.equals(other.business))
+			return false;
 		if (businessId == null) {
 			if (other.businessId != null)
 				return false;
 		} else if (!businessId.equals(other.businessId))
 			return false;
-		if (classificationNum == null) {
-			if (other.classificationNum != null)
+		if (classification == null) {
+			if (other.classification != null)
 				return false;
-		} else if (!classificationNum.equals(other.classificationNum))
+		} else if (!classification.equals(other.classification))
+			return false;
+		if (classificationNum != other.classificationNum)
 			return false;
 		if (menuComment == null) {
 			if (other.menuComment != null)
@@ -141,6 +169,8 @@ public class Menu implements Serializable{
 			return false;
 		return true;
 	}
+
+	
 	
 	
 	
