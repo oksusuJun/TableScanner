@@ -17,6 +17,8 @@
 		<mapper resource="noshow/config/mybatis/mapper/reservationMapper.xml"/>
 		<mapper resource="noshow/config/mybatis/mapper/searchMapper.xml"/>
 		<mapper resource="noshow/config/mybatis/mapper/ownerMemberMapper.xml"/>
+		<mapper resource="noshow/config/mybatis/mapper/orderTableMapper.xml"/>
+		
 	</mappers>
 	
 </configuration>

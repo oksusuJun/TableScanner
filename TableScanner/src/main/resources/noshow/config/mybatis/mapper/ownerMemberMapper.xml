@@ -21,14 +21,7 @@
          rt_deposit
    FROM	 restaurant
    </sql>
-   
-   <!-- 사업자번호로 식당조회 --> 
-   <select id="selectRestaurantByBusinessId" resultMap="restaurant-resultmap">
-   	SELECT *
-	FROM restaurant
-	WHERE business_id = #{value}
-   </select>
-   
+
    <!--  resultMap : restaurant 테이블 select -->
    <resultMap type="restaurant" id="restaurant-resultmap">
       <id column="business_id" property="businessId"/>
@@ -105,7 +98,7 @@
    		<association property="table" javaType="table">
    			<id column="table_seq" property="tableSeq"/> 
    			<id column="table_num" property="tableNum"/>
-   			<id column="table_seats" property="tableSeats"/>
+   			<id column="table_people" property="tablePeople"/>
    			<id column="x_location" property="xLocation"/>
    			<id column="y_location" property="yLocation"/>
    		</association>
@@ -144,4 +137,12 @@
    <delete id="deleteRestaurant" parameterType="string">
       DELETE FROM restaurant WHERE business_id=#{businessId}
    </delete>
+   
+      
+   <!-- 사업자번호로 식당조회 --> 
+   <select id="selectRestaurantByBusinessId" parameterType="string" resultMap="restaurant-resultmap">
+   		<include refid="select-restaurant"/>
+		WHERE business_id = #{value}
+   </select>
+   
 </mapper>

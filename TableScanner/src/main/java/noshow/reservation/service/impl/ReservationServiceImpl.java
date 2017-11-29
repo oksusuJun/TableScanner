@@ -13,56 +13,36 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import noshow.member.dao.OwnerMemberDAO;
+import noshow.member.dao.impl.OwnerMemberDAOImpl;
 import noshow.reservation.dao.ReservationDAO;
 import noshow.reservation.service.ReservationService;
 import noshow.vo.Reservation;
 import noshow.vo.Restaurant;
 
 @Service
-public class ReservationServiceImpl implements ReservationService{
+public class ReservationServiceImpl implements ReservationService {
 
 	@Resource
 	private ReservationDAO dao;
 	
-	@Resource
+	@Resource 
 	private OwnerMemberDAO restaurantDao;
-	
-	@Override
-	public int addReservation(int resNum, String resDate, int resPeople, String resStartTime, String resEndTime, Date resPaidTime, String resPayStatement,
-			int resPrice, String memberId, String businessId) {
-		
-		
-		Restaurant restaurant = restaurantDao.selectRestaurantByBusinessId(businessId);
-		
-		// 매개변수로 받은 사업주 ID로 rtTerm (Table이용시간) 받아옴
-		int rt_term = restaurant.getRtTerm();
-		
-		// 사업주가 설정한 1인당 예약금을 예약 인원에 맞게 초기화
-		int totalPrice = resPeople * restaurant.getRtDeposit();
-		
-		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date formatDate;
-		try {
-			
-			// 예약희망시간을 그대로 받아서 사업주가 지정한 Table 이용시간을 더하는 부분
-			formatDate = dateForm.parse(resEndTime);
-			Calendar cal = new GregorianCalendar(Locale.KOREA);
-			cal.setTime(formatDate);
-			cal.add(Calendar.HOUR, rt_term);
-			resEndTime = dateForm.format(cal.getTime());
-			System.out.println(resEndTime);
-			Reservation reservation = new Reservation(resNum, resDate, resPeople, resStartTime, resEndTime, resPaidTime, resPayStatement, totalPrice, memberId, businessId);
-			
-			int result = dao.insertReservation(reservation);
-			System.out.println(result);
-			return result;
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
+	@Override
+	public int addReservation(int resNum, String resDate, int resPeople, String resStartTime, String resEndTime,
+			Date resPaidTime, String resPayStatement, int resPrice, String memberId, String businessId) {
+
+		// 사업주가 설정한 1인당 예약금을 예약 인원에 맞게 초기화
+		resPrice = calTotalPrice(businessId, resPeople);
 		
-		return 0;
+		resEndTime = calResEndTime(businessId, resStartTime);
+		
+		Reservation reservation = new Reservation(resNum, resDate, resPeople, resStartTime, resEndTime, resPaidTime,
+				resPayStatement, resPrice, memberId, businessId);
+
+		int result = dao.insertReservation(reservation);
+		System.out.println(result);
+		return result;
 	}
 
 	@Override
@@ -84,5 +64,50 @@ public class ReservationServiceImpl implements ReservationService{
 	public List<Reservation> selectReservationByBusinessId(String businessId) {
 		return dao.selectReservationByBusinessId(businessId);
 	}
-	
+
+	/**
+	 * 매개변수로 받은 사업주 ID로 rt_term (Table이용시간) 를 받고, resStartTime (예약시작시간) 에 re_term 을
+	 * 더하여 resEndTime(예약종료시간)을 리턴
+	 * 
+	 * @param businessId
+	 * @param resEndTime
+	 * @return
+	 */
+	private String calResEndTime(String businessId, String resStartTime) {
+		
+		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date formatDate;
+
+		Restaurant restaurant = restaurantDao.selectRestaurantByBusinessId(businessId);
+		int rt_term = restaurant.getRtTerm();
+
+		try {
+			formatDate = dateForm.parse(resStartTime);
+			Calendar cal = new GregorianCalendar(Locale.KOREA);
+			cal.setTime(formatDate);
+			cal.add(Calendar.HOUR, rt_term);
+			String resEndTime = dateForm.format(cal.getTime());
+			System.out.println(resEndTime);
+
+			return resEndTime;
+		} catch (ParseException e) {
+			System.out.println("Date 변환 실패");
+			e.printStackTrace();
+		}
+		return resStartTime;
+
+	}
+
+	/**
+	 * 사업주가 지정한 1인당 예약금을 예약인원에 맞추어 계산해서 리턴
+	 * @param businessId
+	 * @param resPeople
+	 * @return
+	 */
+	private int calTotalPrice(String businessId, int resPeople) {
+		System.out.println(businessId);
+		Restaurant restaurant = restaurantDao.selectRestaurantByBusinessId(businessId);
+		return restaurant.getRtDeposit() * resPeople;
+	}
+
 }

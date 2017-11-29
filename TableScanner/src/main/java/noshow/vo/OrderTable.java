@@ -3,30 +3,49 @@ package noshow.vo;
 import java.io.Serializable;
 
 public class OrderTable implements Serializable{
-	private Table tableSeq; /* 테이블리스트번호 */
-	private Reservation resNum; /* 예약리스트번호 */
+	private int tableSeq; /* 테이블리스트번호 */
+	private int resNum; /* 예약리스트번호 */
+	
+	private Table table;
+	private Reservation reservation;
 	
 	public OrderTable() {}
 
-	public OrderTable(Table tableSeq, Reservation resNum) {
+	public OrderTable(int tableSeq, int resNum) {
 		this.tableSeq = tableSeq;
 		this.resNum = resNum;
 	}
 
-	public Table getTableSeq() {
+	public int getTableSeq() {
 		return tableSeq;
 	}
 
-	public void setTableSeq(Table tableSeq) {
+	public void setTableSeq(int tableSeq) {
 		this.tableSeq = tableSeq;
 	}
 
-	public Reservation getResNum() {
+	public int getResNum() {
 		return resNum;
 	}
 
-	public void setResNum(Reservation resNum) {
+	public void setResNum(int resNum) {
 		this.resNum = resNum;
+	}
+
+	public Table getTable() {
+		return table;
+	}
+
+	public void setTable(Table table) {
+		this.table = table;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
 
 	@Override
@@ -38,8 +57,8 @@ public class OrderTable implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((resNum == null) ? 0 : resNum.hashCode());
-		result = prime * result + ((tableSeq == null) ? 0 : tableSeq.hashCode());
+		result = prime * result + resNum;
+		result = prime * result + ((table == null) ? 0 : table.hashCode());
 		return result;
 	}
 
@@ -52,21 +71,14 @@ public class OrderTable implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		OrderTable other = (OrderTable) obj;
-		if (resNum == null) {
-			if (other.resNum != null)
-				return false;
-		} else if (!resNum.equals(other.resNum))
+		if (resNum != other.resNum)
 			return false;
-		if (tableSeq == null) {
-			if (other.tableSeq != null)
+		if (table == null) {
+			if (other.table != null)
 				return false;
-		} else if (!tableSeq.equals(other.tableSeq))
+		} else if (!table.equals(other.table))
 			return false;
 		return true;
 	}
-
-	
-	
-	
 	
 }
