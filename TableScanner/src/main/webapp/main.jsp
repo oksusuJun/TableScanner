@@ -65,6 +65,7 @@ $(document).ready(function(){
 	
 		<div class="contents">
 			<div class="contents_left">
+				<a href = "ownerInfo.jsp">사업자페이지</a>
 			</div>
 			<div class="contents_mid">
 			</div>
