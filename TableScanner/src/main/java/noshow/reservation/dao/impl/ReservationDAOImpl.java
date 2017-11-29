@@ -1,6 +1,7 @@
 package noshow.reservation.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class ReservationDAOImpl implements ReservationDAO{
 	@Override
 	public List<Reservation> selectReservationByBusinessId(String businessId) {
 		return session.selectList(makeSqlId("selectReservationByBusinessId"), businessId);
+	}
+
+	@Override
+	public int selectResNumByReservationInfo(Map<String, String> resInfoMap) {
+		return session.selectOne(makeSqlId("selectResNumByReservationInfo"), resInfoMap);
 	}
 	
 }

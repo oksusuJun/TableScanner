@@ -18,7 +18,7 @@ public class OrderTableTest {
 		OrderTableService service = (OrderTableService)ctx.getBean("orderTableServiceImpl");
 		
 		/* 예약테이블 추가 */
-		OrderTable orderTable = new OrderTable(9, 1);
+		OrderTable orderTable = new OrderTable(11, 113);
 		System.out.println(orderTable);
 		
 //		int result = service.addOrderTable(orderTable);

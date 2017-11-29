@@ -1,6 +1,7 @@
 package noshow.reservation.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import noshow.vo.Reservation;
 
@@ -42,5 +43,11 @@ public interface ReservationDAO {
 	 */
 	List<Reservation> selectReservationByBusinessId(String businessId);
 	
+	/**
+	 * 기본 예약정보로 예약번호 조회
+	 * @param resInfoMap
+	 * @return
+	 */
+	int selectResNumByReservationInfo(Map<String, String> resInfoMap);
 
 }

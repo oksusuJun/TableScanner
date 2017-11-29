@@ -53,7 +53,9 @@
 		UPDATE	reservation
 		SET		res_date = #{resDate},
 				res_people = #{resPeople},
-				res_time = #{resTime}
+				res_start_time = #{resStartTime},
+				res_end_time = #{resEndTime},
+				res_price = #{resPrice}
 		WHERE	res_num = #{resNum}
 	</update>
 	
@@ -65,7 +67,7 @@
 	</delete>
 	
 	<!-- SELECT -->
-	<!-- ##### 회원 ID 로 예약 조회 ##### -->
+	<!-- ##### 회원 ID 로 전체 예약 조회 ##### -->
 	<select id="selectReservationByMemberId" parameterType="string" resultMap="reservation-resultmap">
 		<include refid="select-reservation"/>
 		WHERE	member_id = #{value}
@@ -75,6 +77,15 @@
 	<select id="selectReservationByBusinessId" parameterType="string" resultMap="reservation-resultmap">
 		<include refid="select-reservation"/>
 		WHERE	business_id = #{value}
+	</select>
+	
+	<!-- TEST 회원ID, 점주ID, 예약날짜+시간 으로 예약번호 조회 -->
+	<select id="selectResNumByReservationInfo" parameterType="map" resultType="_int">
+		SELECT	res_num
+		FROM	reservation
+		WHERE	member_id = #{memberId}
+		AND		business_id = #{businessId}
+		AND		res_start_time = to_date(#{resStartTime}, 'yyyy/mm/dd hh24:mi:ss')
 	</select>
 	
 </mapper>

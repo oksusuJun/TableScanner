@@ -18,22 +18,29 @@ public class ReservationTest {
 
 		Date today = new Date();
 		
-		int resNum = 114;
-		String resDate = "2017/12/02";
+		/* dummy - 실 적용시 파라미터가 될 것 */
+		int resNum = 116;
+		String resDate = "2017/12/05";
 		int resPeople = 2;
-		String resStartTime = "2017/12/02 14:00:00";
+		String resStartTime = "2017/12/05 12:00:00";
 		String resEndTime = resStartTime;
 		Date resPaidTime = new Date();
 		String resPayStatement = "카드결제";
 		int resPrice = 0;
-		String memberId = "id-6";
-		String businessId = "id-2";
+		String memberId = "id-7";
+		String businessId = "id-1";
+		int orderTableSeq = 6;
 		
 		/* 예약 추가 */
-		Reservation reservation1 = new Reservation(106, "2017/12/02", 2, "2017/12/02 14:00:00", "2017/12/02 16:00:00", today, "카드결제", 10000, "id-13", "id-1");
+		Reservation reservation1 = new Reservation(113, "2017/12/02", 4, "2017/12/02 14:00:00", "2017/12/02 16:00:00", today, "카드결제", 10000, "id-13", "id-3");
 //		System.out.println(reservation1);
-		int result = service.addReservation(resNum, resDate, resPeople, resStartTime, resEndTime, resPaidTime, resPayStatement, resPrice, memberId, businessId);
-		System.out.println(result);
+		int result = service.addReservation(resNum, resDate, resPeople, resStartTime, resEndTime, resPaidTime, resPayStatement, resPrice, memberId, businessId, orderTableSeq);
+		if (result == 2) {
+			System.out.println("예약 + 예약테이블 insert 성공!! : " + result);
+		} else {
+			System.out.println("뭔가 잘못되었다......" + result);
+		}
+	
 		
 		/* 회원ID로 예약조회 */
 		List<Reservation> list = service.selectReservationByMemberId(reservation1.getMemberId());

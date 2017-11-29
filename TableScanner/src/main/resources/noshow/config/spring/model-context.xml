@@ -17,8 +17,8 @@
 	<context:component-scan base-package="noshow.reservation.dao.impl"/>	
 
 	<!-- 예약된테이블 -->
-		<context:component-scan base-package="noshow.table.dao.impl"/>	
-		<context:component-scan base-package="noshow.table.service.impl"/>	
+	<context:component-scan base-package="noshow.table.dao.impl"/>	
+	<context:component-scan base-package="noshow.table.service.impl"/>	
 		
 	
 	
