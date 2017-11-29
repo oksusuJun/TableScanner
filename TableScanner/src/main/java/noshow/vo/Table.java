@@ -11,7 +11,7 @@ public class Table implements Serializable{
 	private String businessId; /* 점주 회원 아이디*/
 	
 	private Restaurant restaurant;
-	
+	 
 	public Table() {}
 
 	public Table(int tableSeq,int tableNum, int tablePeople, String xLocation, String yLocation, String businessId) {
