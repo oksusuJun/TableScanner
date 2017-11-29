@@ -32,7 +32,7 @@ $(document).ready(function(){
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/view/content/layout/header.jsp"></jsp:include>
+<%-- 	<jsp:include page="/WEB-INF/view/content/layout/header.jsp"></jsp:include> --%>
 	
 	
 	<section>
@@ -90,6 +90,6 @@ $(document).ready(function(){
 		</div>
 	</section>
 		
-	<jsp:include page="/WEB-INF/view/content/layout/footer.jsp"></jsp:include>
+<%-- 	<jsp:include page="/WEB-INF/view/content/layout/footer.jsp"></jsp:include> --%>
 </body>
 </html>

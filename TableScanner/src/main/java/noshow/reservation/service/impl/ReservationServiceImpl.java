@@ -33,12 +33,18 @@ public class ReservationServiceImpl implements ReservationService{
 		
 		
 		Restaurant restaurant = restaurantDao.selectRestaurantByBusinessId(businessId);
+		
+		// 매개변수로 받은 사업주 ID로 rtTerm (Table이용시간) 받아옴
 		int rt_term = restaurant.getRtTerm();
+		
+		// 사업주가 설정한 1인당 예약금을 예약 인원에 맞게 초기화
 		int totalPrice = resPeople * restaurant.getRtDeposit();
 		
 		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date formatDate;
 		try {
+			
+			// 예약희망시간을 그대로 받아서 사업주가 지정한 Table 이용시간을 더하는 부분
 			formatDate = dateForm.parse(resEndTime);
 			Calendar cal = new GregorianCalendar(Locale.KOREA);
 			cal.setTime(formatDate);

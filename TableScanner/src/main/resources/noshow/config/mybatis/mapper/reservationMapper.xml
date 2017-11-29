@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="noshow.config.mybatis.mapper.reservationMapper">
-
+ 
 	<sql id="select-reservation">
 		SELECT	res_num,
 				res_date,
@@ -15,7 +15,7 @@
 				business_id
 		FROM	reservation
 	</sql>
-	
+	 
 	<resultMap type="reservation" id="reservation-resultmap">
 		<id column="res_num" property="resNum"/>
 		<result column="res_date" property="resDate"/>
