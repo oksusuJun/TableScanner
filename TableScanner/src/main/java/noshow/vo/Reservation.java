@@ -18,6 +18,7 @@ public class Reservation implements Serializable {
 //	private Restaurant businessId; /* 점주회원 아이디 */
 
 	private Member member;
+	private OrderTable orderTable;
 	
 	public Member getMember() {
 		return member;
