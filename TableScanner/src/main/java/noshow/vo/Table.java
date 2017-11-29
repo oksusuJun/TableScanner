@@ -3,30 +3,32 @@ package noshow.vo;
 import java.io.Serializable;
 
 public class Table implements Serializable{
-	private int TableSeq; /* 테이블리스트 번호*/
+	private int tableSeq; /* 테이블리스트 번호*/
 	private int tableNum; /* 테이블 번호 */
-	private int tableSeats; /* 인원 */
-	private int xLocation; /* x좌표 */
-	private int yLocation; /* y좌표 */
-	private Restaurant businessId; /* 점주 회원 아이디*/
+	private int tablePeople; /* 인원 */
+	private String xLocation; /* x좌표 */
+	private String yLocation; /* y좌표 */
+	private String businessId; /* 점주 회원 아이디*/
+	
+	private Restaurant restaurant;
 	
 	public Table() {}
 
-	public Table(int tableSeq, int tableNum, int tableSeats, int xLocation, int yLocation, Restaurant businessId) {
-		TableSeq = tableSeq;
+	public Table(int tableSeq,int tableNum, int tablePeople, String xLocation, String yLocation, String businessId) {
+		this.tableSeq = tableSeq;
 		this.tableNum = tableNum;
-		this.tableSeats = tableSeats;
+		this.tablePeople = tablePeople;
 		this.xLocation = xLocation;
 		this.yLocation = yLocation;
 		this.businessId = businessId;
 	}
 
 	public int getTableSeq() {
-		return TableSeq;
+		return tableSeq;
 	}
 
 	public void setTableSeq(int tableSeq) {
-		TableSeq = tableSeq;
+		this.tableSeq = tableSeq;
 	}
 
 	public int getTableNum() {
@@ -37,54 +39,63 @@ public class Table implements Serializable{
 		this.tableNum = tableNum;
 	}
 
-	public int getTableSeats() {
-		return tableSeats;
+	public int getTablePeople() {
+		return tablePeople;
 	}
 
-	public void setTableSeats(int tableSeats) {
-		this.tableSeats = tableSeats;
+	public void setTablePeople(int tablePeople) {
+		this.tablePeople = tablePeople;
 	}
 
-	public int getxLocation() {
+	public String getxLocation() {
 		return xLocation;
 	}
 
-	public void setxLocation(int xLocation) {
+	public void setxLocation(String xLocation) {
 		this.xLocation = xLocation;
 	}
 
-	public int getyLocation() {
+	public String getyLocation() {
 		return yLocation;
 	}
 
-	public void setyLocation(int yLocation) {
+	public void setyLocation(String yLocation) {
 		this.yLocation = yLocation;
 	}
 
-	public Restaurant getBusinessId() {
+	public String getBusinessId() {
 		return businessId;
 	}
 
-	public void setBusinessId(Restaurant businessId) {
+	public void setBusinessId(String businessId) {
 		this.businessId = businessId;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	@Override
 	public String toString() {
-		return "Table [TabelSeq=" + TableSeq + ", tableNum=" + tableNum + ", tableSeats=" + tableSeats + ", xLocation="
-				+ xLocation + ", yLocation=" + yLocation + ", businessId=" + businessId + "]";
+		return "Table [tableSeq=" + tableSeq + ", tableNum=" + tableNum + ", tablePeople=" + tablePeople
+				+ ", xLocation=" + xLocation + ", yLocation=" + yLocation + ", businessId=" + businessId + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + TableSeq;
 		result = prime * result + ((businessId == null) ? 0 : businessId.hashCode());
+		result = prime * result + ((restaurant == null) ? 0 : restaurant.hashCode());
 		result = prime * result + tableNum;
-		result = prime * result + tableSeats;
-		result = prime * result + xLocation;
-		result = prime * result + yLocation;
+		result = prime * result + tablePeople;
+		result = prime * result + tableSeq;
+		result = prime * result + ((xLocation == null) ? 0 : xLocation.hashCode());
+		result = prime * result + ((yLocation == null) ? 0 : yLocation.hashCode());
 		return result;
 	}
 
@@ -97,24 +108,34 @@ public class Table implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Table other = (Table) obj;
-		if (TableSeq != other.TableSeq)
-			return false;
 		if (businessId == null) {
 			if (other.businessId != null)
 				return false;
 		} else if (!businessId.equals(other.businessId))
 			return false;
+		if (restaurant == null) {
+			if (other.restaurant != null)
+				return false;
+		} else if (!restaurant.equals(other.restaurant))
+			return false;
 		if (tableNum != other.tableNum)
 			return false;
-		if (tableSeats != other.tableSeats)
+		if (tablePeople != other.tablePeople)
 			return false;
-		if (xLocation != other.xLocation)
+		if (tableSeq != other.tableSeq)
 			return false;
-		if (yLocation != other.yLocation)
+		if (xLocation == null) {
+			if (other.xLocation != null)
+				return false;
+		} else if (!xLocation.equals(other.xLocation))
+			return false;
+		if (yLocation == null) {
+			if (other.yLocation != null)
+				return false;
+		} else if (!yLocation.equals(other.yLocation))
 			return false;
 		return true;
 	}
-	
 	
 	
 	
